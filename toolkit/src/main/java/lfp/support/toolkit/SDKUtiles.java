@@ -11,6 +11,36 @@ import android.os.Build;
  *      compatible()        :API兼容性判断
  *      getSdkVersionName() :获得版本名称
  *
+ *      Name                VersionName    API
+ *      BASE                    1.0         1
+ *      BASE_1_1                1.1         2
+ *      CUPCAKE                 1.5         3
+ *      DONUT                   1.6         4
+ *      ECLAIR                  2.0         5
+ *      ECLAIR_0_1              2.0.1       6
+ *      ECLAIR_MR1              2.1         7
+ *      FROYO                   2.2         8
+ *      GINGERBREAD             2.3         9
+ *      GINGERBREAD_MR1         2.3.3       10
+ *      HONEYCOMB               3.0         11
+ *      HONEYCOMB_MR1           3.1         12
+ *      HONEYCOMB_MR2           3.2         13
+ *      ICE_CREAM_SANDWICH      4.0         14
+ *      ICE_CREAM_SANDWICH_MR1  4.0.3       15
+ *      JELLY_BEAN              4.1         16
+ *      JELLY_BEAN_MR1          4.2         17
+ *      JELLY_BEAN_MR2          4.3         18
+ *      KITKAT                  4.4         19
+ *      KITKAT_WATCH            4.4W        20
+ *      LOLLIPOP                5.0         21
+ *      LOLLIPOP_MR1            5.1         22
+ *      M                       6.0         23
+ *      N                       7.0         24
+ *      N_1                     7.1.1       25
+ *      O                       8.0         26
+ *      O_1                     8.1         27
+ *      P                       9.0         28
+ *
  *
  * Created by LiFuPing on 2018/6/27.
  * </pre>
@@ -157,17 +187,17 @@ public class SDKUtiles {
      */
     public static final int N = 24;
     /**
-     * N1 is for ¯\_(ツ)_/¯. Android 7.1.1
+     * N_1 is for ¯\_(ツ)_/¯. Android 7.1.1
      */
-    public static final int N1 = 25;
+    public static final int N_1 = 25;
     /**
      * O is for ¯\_(ツ)_/¯. Android 8.0
      */
     public static final int O = 26;
     /**
-     * O1 is for ¯\_(ツ)_/¯. Android 8.1
+     * O_1 is for ¯\_(ツ)_/¯. Android 8.1
      */
-    public static final int O1 = 27;
+    public static final int O_1 = 27;
     /**
      * P is for ¯\_(ツ)_/¯. Android 9.0
      */
@@ -226,11 +256,11 @@ public class SDKUtiles {
                 return "Android_6.0";
             case N:
                 return "Android_7.0";
-            case N1:
+            case N_1:
                 return "Android_7.1.1";
             case O:
                 return "Android_9.0";
-            case O1:
+            case O_1:
                 return "Android_8.1";
             case P:
                 return "Android_9.0";
