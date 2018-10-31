@@ -76,7 +76,7 @@ import lfp.support.toolkit.constant.MemoryConstants;
  *      addImageWatermark()         :添加图片水印
  *      toAlpha()                   :获得原图的轮廓
  *      toGray()                    :获得灰度图
- *      fastBlur()                  :快速模糊 -> 缩小，模糊，放大
+ *      fastBlur()                  :快速模糊 -&gt; 缩小，模糊，放大
  *      renderScriptBlur()          :渲染模糊
  *      stackBlur()                 :堆栈模糊
  *      save()                      :缓存Bitmap

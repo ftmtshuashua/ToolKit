@@ -739,6 +739,7 @@ public class ConvertUtils {
      * 将bytes转化为object
      *
      * @param bytes The bytes
+     * @param <T> The object type
      * @return The object
      */
     public static <T> T bytes2Object(final byte[] bytes) {

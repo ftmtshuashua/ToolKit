@@ -53,12 +53,12 @@ public class ServiceUtils {
     /**
      * Start the service.
      *
-     * @param context The context
-     * @param className The name of class.
+     * @param context   The context
+     * @param className The name of class
      */
-    public static void startService(final Context context ,final String className) {
+    public static void startService(final Context context, final String className) {
         try {
-            startService(context,Class.forName(className));
+            startService(context, Class.forName(className));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -67,9 +67,10 @@ public class ServiceUtils {
     /**
      * Start the service.
      *
+     * @param context   The context
      * @param cls The service class.
      */
-    public static void startService(final Context context ,final Class<?> cls) {
+    public static void startService(final Context context, final Class<?> cls) {
         Intent intent = new Intent(context, cls);
         context.startService(intent);
     }
@@ -77,13 +78,13 @@ public class ServiceUtils {
     /**
      * Stop the service.
      *
-     * @param context The context
+     * @param context   The context
      * @param className The name of class.
      * @return {@code true}: success<br>{@code false}: fail
      */
-    public static boolean stopService(final Context context,final String className) {
+    public static boolean stopService(final Context context, final String className) {
         try {
-            return stopService(context,Class.forName(className));
+            return stopService(context, Class.forName(className));
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -94,10 +95,10 @@ public class ServiceUtils {
      * Stop the service.
      *
      * @param context The context
-     * @param cls The name of class.
+     * @param cls     The name of class.
      * @return {@code true}: success<br>{@code false}: fail
      */
-    public static boolean stopService(final Context context,final Class<?> cls) {
+    public static boolean stopService(final Context context, final Class<?> cls) {
         Intent intent = new Intent(context, cls);
         return context.stopService(intent);
     }
@@ -105,7 +106,7 @@ public class ServiceUtils {
     /**
      * Bind the service.
      *
-     * @param context The context
+     * @param context   The context
      * @param className The name of class.
      * @param conn      The ServiceConnection object.
      * @param flags     Operation options for the binding.
@@ -124,7 +125,7 @@ public class ServiceUtils {
                                    final ServiceConnection conn,
                                    final int flags) {
         try {
-            bindService(context,Class.forName(className), conn, flags);
+            bindService(context, Class.forName(className), conn, flags);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -134,18 +135,18 @@ public class ServiceUtils {
      * Bind the service.
      *
      * @param context The context
-     * @param cls   The service class.
-     * @param conn  The ServiceConnection object.
-     * @param flags Operation options for the binding.
-     *              <ul>
-     *              <li>0</li>
-     *              <li>{@link Context#BIND_AUTO_CREATE}</li>
-     *              <li>{@link Context#BIND_DEBUG_UNBIND}</li>
-     *              <li>{@link Context#BIND_NOT_FOREGROUND}</li>
-     *              <li>{@link Context#BIND_ABOVE_CLIENT}</li>
-     *              <li>{@link Context#BIND_ALLOW_OOM_MANAGEMENT}</li>
-     *              <li>{@link Context#BIND_WAIVE_PRIORITY}</li>
-     *              </ul>
+     * @param cls     The service class.
+     * @param conn    The ServiceConnection object.
+     * @param flags   Operation options for the binding.
+     *                <ul>
+     *                <li>0</li>
+     *                <li>{@link Context#BIND_AUTO_CREATE}</li>
+     *                <li>{@link Context#BIND_DEBUG_UNBIND}</li>
+     *                <li>{@link Context#BIND_NOT_FOREGROUND}</li>
+     *                <li>{@link Context#BIND_ABOVE_CLIENT}</li>
+     *                <li>{@link Context#BIND_ALLOW_OOM_MANAGEMENT}</li>
+     *                <li>{@link Context#BIND_WAIVE_PRIORITY}</li>
+     *                </ul>
      */
     public static void bindService(final Context context,
                                    final Class<?> cls,
@@ -159,9 +160,9 @@ public class ServiceUtils {
      * Unbind the service.
      *
      * @param context The context
-     * @param conn The ServiceConnection object.
+     * @param conn    The ServiceConnection object.
      */
-    public static void unbindService(final Context context,final ServiceConnection conn) {
+    public static void unbindService(final Context context, final ServiceConnection conn) {
         context.unbindService(conn);
     }
 
@@ -169,21 +170,21 @@ public class ServiceUtils {
      * Return whether service is running.
      *
      * @param context The context
-     * @param cls The service class.
+     * @param cls     The service class.
      * @return {@code true}: yes<br>{@code false}: no
      */
-    public static boolean isServiceRunning(final  Context context,final Class<?> cls) {
-        return isServiceRunning(context,cls.getName());
+    public static boolean isServiceRunning(final Context context, final Class<?> cls) {
+        return isServiceRunning(context, cls.getName());
     }
 
     /**
      * Return whether service is running.
      *
-     * @param context The context
+     * @param context   The context
      * @param className The name of class.
      * @return {@code true}: yes<br>{@code false}: no
      */
-    public static boolean isServiceRunning(final Context context,final String className) {
+    public static boolean isServiceRunning(final Context context, final String className) {
         ActivityManager am =
                 (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         if (am == null) return false;

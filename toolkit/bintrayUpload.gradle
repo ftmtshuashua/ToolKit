@@ -31,6 +31,9 @@ def bintrayApikey = properties.getProperty("bintray.apikey")
 def javadocName = properties.getProperty("javadoc.name")
 
 println("执行:bintrayUpload...")
+println("仓库地址:https://jcenter.bintray.com/")
+println("bintray:https://bintray.com/")
+
 println("projectName:" + projectName)
 println("projectGroupId:" + projectGroupId)
 println("projectArtifactId:" + projectArtifactId)
