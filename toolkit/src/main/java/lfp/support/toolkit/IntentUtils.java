@@ -16,9 +16,9 @@ import static android.Manifest.permission.CALL_PHONE;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      Intent类相关工具
- * function:
+ * Function:
  *      getInstallAppIntent()               :安装APP
  *      getUninstallAppIntent()             :卸载APP
  *      getLaunchAppIntent()                :启动APP

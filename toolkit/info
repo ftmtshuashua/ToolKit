@@ -1,9 +1,3 @@
-getNumCores()           :获得CPU核心数
-getMinCpuFrequence()    :获得CPU最小核心频率(KHZ)
-getCurCpuFreq()         :获得CPU当前核心频率(KHZ)
-getCpuName()            :获得CPU名字
-getThreadValue()        :获得最优线程数
-getCupInfo()            :获得CPU信息
 
 
 

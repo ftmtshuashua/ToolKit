@@ -24,9 +24,9 @@ import static android.Manifest.permission.WRITE_SETTINGS;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      屏幕工具
- * function:
+ * Function:
  *      px2dip()            :px转dp
  *      dip2px()            :dp转px
  *      sp2px()             :sp转px

@@ -2,9 +2,9 @@ package lfp.support.toolkit;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      String类相关工具
- * function:
+ * Function:
  *      isTrimEmpty()       :去掉首位无意义,判断是否为空或者空数据
  *      isNotTrimEmpty()    :去掉首位无意义,判断非空并且非空数据
  *      equalsIgnoreCase()  :比较两个字符串是否相等,忽略大小写

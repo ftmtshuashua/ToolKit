@@ -13,10 +13,10 @@ import java.util.regex.Pattern;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      CUP工具
  *
- * function:
+ * Function:
  *      getNumCores()           :获得CPU核心数
  *      getMinCpuFrequence()    :获得CPU最小核心频率(KHZ)
  *      getCurCpuFreq()         :获得CPU当前核心频率(KHZ)

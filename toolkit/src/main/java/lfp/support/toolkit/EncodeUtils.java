@@ -10,9 +10,9 @@ import java.net.URLEncoder;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      编码类工具
- * function:
+ * Function:
  *      urlEncode()             :Url编码
  *      urlDecode()             :Url解码
  *      base64Encode()          :base64编码

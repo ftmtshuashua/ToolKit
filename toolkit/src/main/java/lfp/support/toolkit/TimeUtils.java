@@ -14,9 +14,9 @@ import java.util.Locale;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      时间类工具
- * function:
+ * Function:
  *      millis2String()             :时间戳转格式化时间
  *      string2Millis()             :格式化时间转时间戳
  *      string2Date()               :格式化时间转时间对象

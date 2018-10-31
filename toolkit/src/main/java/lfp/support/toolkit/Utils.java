@@ -23,9 +23,9 @@ import java.util.Map;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      常用工具方法集合
- * function:
+ * Function:
  *      isEmpty()       :判断是否为空或者空数据
  *      isNotEmpty()    :判断非空并且非空数据
  *      checkNotNull()  :检查对象是否为空

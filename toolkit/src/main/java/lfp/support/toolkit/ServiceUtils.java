@@ -12,9 +12,9 @@ import java.util.Set;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      服务相关类工具
- * function:
+ * Function:
  *      getAllRunningServices()     :获得所有运行中的服务
  *      startService()              :开始服务
  *      stopService()               :停止服务

@@ -12,15 +12,14 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 
-
 import java.lang.reflect.Field;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      虚拟键盘类相关工具
  *
- * function:
+ * Function:
  *      showSoftInput()                     :显示虚拟键盘
  *      hideSoftInput()                     :隐藏虚拟键盘
  *      toggleSoftInput()                   :切换虚拟键盘显示状态
@@ -108,10 +107,12 @@ public class KeyboardUtils {
 
     /**
      * Toggle the soft input display or not.
+     *
+     * @param context The context
      */
-    public static void toggleSoftInput() {
+    public static void toggleSoftInput(final Context context) {
         InputMethodManager imm =
-                (InputMethodManager) AppUtils.getApp().getSystemService(Context.INPUT_METHOD_SERVICE);
+                (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm == null) return;
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
@@ -232,7 +233,7 @@ public class KeyboardUtils {
     public static void fixSoftInputLeaks(final Context context) {
         if (context == null) return;
         InputMethodManager imm =
-                (InputMethodManager) AppUtils.getApp().getSystemService(Context.INPUT_METHOD_SERVICE);
+                (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm == null) return;
         String[] strArr = new String[]{"mCurRootView", "mServedView", "mNextServedView"};
         for (int i = 0; i < 3; i++) {

@@ -8,9 +8,9 @@ import java.util.List;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      Shell命令相关工具
- * function:
+ * Function:
  *      execCmd()   :运行命令
  *
  * Created by LiFuPing on 2018/6/27.

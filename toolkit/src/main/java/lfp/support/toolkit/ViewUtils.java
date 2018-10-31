@@ -12,9 +12,9 @@ import lfp.support.toolkit.action.Action2;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      View工具方法集合
- * function:
+ * Function:
  *      getViewWideHighBy**()   :获取View的高度和宽度
  *      setVisibilitySwitch()   :切换View显示状态
  *      setVisibility()         :设置View的显示状态

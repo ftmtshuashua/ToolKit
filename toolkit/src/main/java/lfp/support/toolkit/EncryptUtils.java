@@ -28,9 +28,9 @@ import javax.crypto.spec.SecretKeySpec;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      加密相关类工具
- * function:
+ * Tunction:
  *      encrypt**() :加密方法
  *      decrypt**() :解密方法
  *

@@ -4,10 +4,10 @@ import java.util.LinkedList;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      线程安全的对象复用工具
  *
- * function:
+ * Function:
  *      obtain()    :获得一个实例
  *      recycle()   :回收实例
  *      create()    :创建实例

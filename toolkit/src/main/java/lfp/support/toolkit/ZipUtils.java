@@ -20,9 +20,9 @@ import java.util.zip.ZipOutputStream;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      压缩工具
- * function:
+ * Function:
  *
  * Created by LiFuPing on 2018/6/29.
  * </pre>

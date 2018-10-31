@@ -4,9 +4,9 @@ import android.os.Build;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      SDK版本查询工具
- * function:
+ * Function:
  *      getSdkVersion()     :获得当前版本号
  *      compatible()        :API兼容性判断
  *      getSdkVersionName() :获得版本名称

@@ -23,9 +23,9 @@ import static android.Manifest.permission.SEND_SMS;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      手机设备信息相关工具
- * function:
+ * Function:
  *      isPhone()               :判断设备是否为手机
  *      isTablet()              :判断设备是否为平板
  *      getDeviceId()           :获得唯一的设备id

@@ -27,9 +27,9 @@ import static android.Manifest.permission.MODIFY_PHONE_STATE;
 
 /**
  * <pre>
- * desc:
+ * Tip:
  *      网络相关工具
- * function:
+ * Function:
  *      openWirelessSettings()  :打开无线设置
  *      isConnected()           :判断网络是否连接
  *      isAvailableByPing()     :判断网络是否可用ping(检查网络连通性)
