@@ -85,6 +85,7 @@ import lfp.support.toolkit.constant.MemoryConstants;
  *      compressByScale()           :通过缩放来压缩
  *      compressByQuality()         :通过质量来压缩
  *      compressBySampleSize()      :通过改变采样率来压缩
+ *      getBitmapSize()             :获得Bitmap的大小
  *
  * Created by LiFuPing on 2018/6/27.
  * </pre>
@@ -1950,5 +1951,16 @@ public class BitmapUtils {
                 e.printStackTrace();
             }
         }
+    }
+
+
+    /**
+     * 获得Bitmap的大小
+     *
+     * @param bitmap The bitmap
+     * @return The bitmap size (byte)
+     */
+    public static int getBitmapSize(Bitmap bitmap) {
+        return bitmap.getRowBytes() * bitmap.getHeight();
     }
 }
