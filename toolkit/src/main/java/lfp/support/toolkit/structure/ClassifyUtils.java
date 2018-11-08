@@ -1,4 +1,4 @@
-package lfp.support.toolkit;
+package lfp.support.toolkit.structure;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import java.util.Iterator;
  * Function:
  *      put()           :提交需要归类的数据
  *      getGroups()     :获得组列表
- *      getArray()      :通过组获得组数据
+ *      getArray()      :通过组获得组被归类的数据
  *
  *
  * Created by LiFuPing on 2018/8/6.

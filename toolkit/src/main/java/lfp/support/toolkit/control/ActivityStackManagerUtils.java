@@ -1,4 +1,4 @@
-package lfp.support.toolkit;
+package lfp.support.toolkit.control;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -14,6 +14,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+import lfp.support.toolkit.AppUtils;
 
 /**
  * <pre>

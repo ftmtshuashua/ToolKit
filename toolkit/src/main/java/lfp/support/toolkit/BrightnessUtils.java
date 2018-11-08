@@ -26,7 +26,7 @@ import android.view.WindowManager;
  * Created by LiFuPing on 2018/6/27.
  * </pre>
  */
-public final class BrightnessUtils {
+public   class BrightnessUtils {
 
     private BrightnessUtils() {
     }

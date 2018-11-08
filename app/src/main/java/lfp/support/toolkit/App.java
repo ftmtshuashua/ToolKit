@@ -2,6 +2,8 @@ package lfp.support.toolkit;
 
 import android.app.Application;
 
+import lfp.support.toolkit.control.ActivityStackManagerUtils;
+
 /**
  * <pre>
  * Tip:
@@ -16,5 +18,6 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         ActivityStackManagerUtils.init(this);
+        ToolKit.init(this);
     }
 }

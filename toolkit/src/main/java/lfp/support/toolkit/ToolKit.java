@@ -22,6 +22,7 @@ public class ToolKit {
      * @param context The context
      */
     public static final void init(final Context context) {
+        LogUtils.init(context);
 
     }
 
