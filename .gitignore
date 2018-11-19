@@ -11,3 +11,4 @@
 .externalNativeBuild
 toolkit/local.properties
 toolkit/info
+toolkit/bintrayUpload.gradle

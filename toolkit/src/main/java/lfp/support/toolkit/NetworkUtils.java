@@ -5,19 +5,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
-import android.support.annotation.RequiresPermission;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Enumeration;
+
+import androidx.annotation.RequiresPermission;
 
 import static android.Manifest.permission.ACCESS_NETWORK_STATE;
 import static android.Manifest.permission.ACCESS_WIFI_STATE;
@@ -46,6 +49,8 @@ import static android.Manifest.permission.MODIFY_PHONE_STATE;
  *      getIPAddress()          :获得IP地址
  *      getDomainAddress()      :获得地址域
  *      isWifiProxy()           :判断设备 是否使用代理上网
+ *      ping()                  :检查网络连通性
+ *      getSSID()               :获得SSID
  *
  * Created by LiFuPing on 2018/6/27.
  * </pre>
@@ -434,5 +439,49 @@ public class NetworkUtils {
             proxyPort = android.net.Proxy.getPort(context);
         }
         return (!TextUtils.isEmpty(proxyAddress)) && (proxyPort != -1);
+    }
+
+
+    /**
+     * 检查网络连通性
+     *
+     * @param address The address
+     * @return The boolean
+     */
+    public static boolean ping(String address) {
+        try {
+            Process p = Runtime.getRuntime().exec("ping -c 1 " + address);
+            int status = p.waitFor();
+            if (status == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * 获得SSID
+     *
+     * @return The SSID
+     */
+    public static String getSSID() {
+        Context context = AppUtils.getApp();
+        String SSID = null;
+        ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        if (networkInfo.isConnected()) {
+            final WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+            final WifiInfo connectionInfo = wifiManager.getConnectionInfo();
+            if (connectionInfo != null && connectionInfo.getSSID() != null) {
+                SSID = connectionInfo.getSSID();
+            }
+        }
+        return SSID;
     }
 }

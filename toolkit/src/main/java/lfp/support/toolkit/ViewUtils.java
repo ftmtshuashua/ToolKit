@@ -1,7 +1,7 @@
 package lfp.support.toolkit;
 
 import android.os.Build;
-import android.support.v4.view.ViewCompat;
+import androidx.core.view.ViewCompat;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;

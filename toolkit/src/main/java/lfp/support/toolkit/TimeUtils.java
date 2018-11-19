@@ -1,7 +1,7 @@
 package lfp.support.toolkit;
 
 import android.annotation.SuppressLint;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import lfp.support.toolkit.constant.TimeConstants;
 

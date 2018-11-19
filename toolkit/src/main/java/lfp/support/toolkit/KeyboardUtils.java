@@ -2,6 +2,7 @@ package lfp.support.toolkit;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
@@ -299,4 +300,6 @@ public class KeyboardUtils {
     public interface OnSoftInputChangedListener {
         void onSoftInputChanged(int height);
     }
+
+
 }

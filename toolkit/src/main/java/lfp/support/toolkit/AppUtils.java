@@ -1,6 +1,5 @@
 package lfp.support.toolkit;
 
-import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.ComponentName;
@@ -13,7 +12,6 @@ import android.content.pm.ResolveInfo;
 import android.content.pm.Signature;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import java.io.File;
@@ -286,7 +284,7 @@ public class AppUtils {
      * @param category The desired category.
      * @return {@code true}: yes<br>{@code false}: no
      */
-    public static boolean isAppInstalled(@NonNull final String action, @NonNull final String category) {
+    public static boolean isAppInstalled( final String action,  final String category) {
         Intent intent = new Intent(action);
         intent.addCategory(category);
         PackageManager pm = getApp().getPackageManager();
@@ -300,7 +298,7 @@ public class AppUtils {
      * @param packageName The name of the package.
      * @return {@code true}: yes<br>{@code false}: no
      */
-    public static boolean isAppInstalled(@NonNull final String packageName) {
+    public static boolean isAppInstalled( final String packageName) {
         return !Utils.isSpace(packageName) && IntentUtils.getLaunchAppIntent(getApp(), packageName) != null;
     }
 
@@ -398,7 +396,7 @@ public class AppUtils {
      * @param packageName The name of the package.
      * @return {@code true}: yes<br>{@code false}: no
      */
-    public static boolean isAppForeground(@NonNull final String packageName) {
+    public static boolean isAppForeground( final String packageName) {
         return !Utils.isSpace(packageName) && packageName.equals(ProcessUtils.getForegroundProcessName());
     }
 
@@ -616,7 +614,6 @@ public class AppUtils {
         if (Utils.isSpace(packageName)) return null;
         try {
             PackageManager pm = getApp().getPackageManager();
-            @SuppressLint("PackageManagerGetSignatures")
             PackageInfo pi = pm.getPackageInfo(packageName, PackageManager.GET_SIGNATURES);
             return pi == null ? null : pi.signatures;
         } catch (PackageManager.NameNotFoundException e) {

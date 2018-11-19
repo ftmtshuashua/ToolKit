@@ -1,8 +1,9 @@
 package lfp.support.toolkit
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import lfp.support.toolkit.cache.AssetsUtils
+import lfp.support.toolkit.demo.R
 
 class MainActivity : AppCompatActivity() {
 
