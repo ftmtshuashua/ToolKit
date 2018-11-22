@@ -5,11 +5,6 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
 import android.os.Looper;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.collection.LongSparseArray;
-import androidx.collection.SimpleArrayMap;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
@@ -18,7 +13,15 @@ import android.view.View;
 
 import java.lang.reflect.Array;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Map;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.collection.LongSparseArray;
+import androidx.collection.SimpleArrayMap;
+import lfp.support.toolkit.action.Action1;
 
 
 /**
@@ -206,7 +209,7 @@ public class Utils {
      * @param <T> object
      * @return 如果对象不为空则返回这个对象
      */
-    public static <T> T checkNotNull(@Nullable final T obj) {
+    public static <T> T requireNonNull(@Nullable final T obj) {
         if (obj == null) throw new NullPointerException();
         return obj;
     }
@@ -219,7 +222,7 @@ public class Utils {
      * @param <T> object
      * @return 如果对象不为空则返回这个对象
      */
-    public static <T> T checkNotNull(@Nullable final T obj, String msg) {
+    public static <T> T requireNonNull(@Nullable final T obj, String msg) {
         if (obj == null) throw new NullPointerException(msg);
         return obj;
     }
@@ -270,4 +273,21 @@ public class Utils {
         return obj;
     }
 
+
+    /**
+     * 遍历集合
+     *
+     * @param collection 被遍历的集合
+     * @param action     回调函数
+     * @param <T>        集合数据类型
+     */
+    public static <T> void map(Collection<T> collection, Action1<? super T> action) {
+        requireNonNull(collection);
+        requireNonNull(action);
+        Iterator<T> iterator = collection.iterator();
+        while (iterator.hasNext()) {
+            T module = iterator.next();
+            action.call(module);
+        }
+    }
 }

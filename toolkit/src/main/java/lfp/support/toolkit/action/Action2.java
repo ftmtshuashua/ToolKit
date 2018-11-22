@@ -8,6 +8,7 @@ package lfp.support.toolkit.action;
  * Created by LiFuPing on 2018/10/29 14:36
  * </pre>
  */
+@FunctionalInterface
 public interface Action2<A,B> {
     void call(A a,B b);
 }
