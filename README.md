@@ -6,7 +6,7 @@
 
 设置依赖项
 ```
-implementation 'support.lfp:ToolKit:0.1.2'
+implementation 'support.support.lfp:ToolKit:0.1.2'
 ```
 
 

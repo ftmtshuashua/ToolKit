@@ -25,4 +25,5 @@ dependencies {
     compileOnly 'androidx.appcompat:appcompat:1.0.2'
 }
 
-apply from: "bintrayUpload.gradle"
+//apply from: "bintrayUpload.gradle"
+apply plugin: 'com.github.dcendents.android-maven'

@@ -12,7 +12,7 @@ publish {
     userOrg = 'ftmtshuashua'
     groupId = 'support.lfp'
     artifactId = 'ToolKit'
-    publishVersion = '0.1.2'
+    publishVersion = '0.1.5'
     desc = ''
     website = 'https://github.com/ftmtshuashua/ToolKit'
 }
