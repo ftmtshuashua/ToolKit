@@ -2,16 +2,31 @@
 `ToolKit`是Androd开发基础工具集，包含所有常用工具
 
 
-## 入门指南
 
-设置依赖项
+## 配置依赖
+
+在项目的build.gradle中添加
 ```
-implementation 'support.support.lfp:ToolKit:0.1.2'
+allprojects {
+    repositories {
+        maven { url 'https://www.jitpack.io' }
+    }
+}
+```
+在Model的build.gradle中添加
+```
+dependencies {
+    implementation 'com.github.ftmtshuashua:ToolKit:v1.0.1'
+}
+```
+该项目在AndroidX基础上搭建,需要以下库
+```
+implementation 'androidx.appcompat:appcompat:version'
 ```
 
 
 
-## 问题反馈
+#### 问题反馈
 
 如果你在使用ToolKit中遇到任何问题可以提[Issues](https://github.com/ftmtshuashua/ToolKit/issues)出来。另外欢迎大家为ToolKit贡献智慧，欢迎大家[Fork and Pull requests](https://github.com/ftmtshuashua/ToolKit)。
 
