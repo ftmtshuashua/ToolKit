@@ -3,7 +3,7 @@
 buildscript {
     repositories {
         google()
-         jcenter(){ url 'http://jcenter.bintray.com/'}
+        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
