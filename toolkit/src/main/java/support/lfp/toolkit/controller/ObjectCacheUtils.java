@@ -1,4 +1,4 @@
-package support.lfp.toolkit.control;
+package support.lfp.toolkit.controller;
 
 import java.util.LinkedList;
 

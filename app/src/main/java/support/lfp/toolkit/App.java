@@ -2,7 +2,7 @@ package support.lfp.toolkit;
 
 import android.app.Application;
 
-import support.lfp.toolkit.control.ActivityStackManagerUtils;
+import support.lfp.toolkit.controller.ActivityStackManagerUtils;
 
 /**
  * <pre>

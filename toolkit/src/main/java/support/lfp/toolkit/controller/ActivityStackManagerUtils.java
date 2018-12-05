@@ -1,4 +1,4 @@
-package support.lfp.toolkit.control;
+package support.lfp.toolkit.controller;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
