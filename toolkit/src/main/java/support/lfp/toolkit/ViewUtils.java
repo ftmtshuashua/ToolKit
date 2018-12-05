@@ -208,7 +208,8 @@ public class ViewUtils {
      */
     public static final int getInt(View view) {
         Utils.requireNonNull(view);
-        return Integer.parseInt(getString(view));
+        String str = getString(view);
+        return Utils.isEmpty(str) ? 0 : Integer.parseInt(str);
     }
 
     /**
@@ -219,7 +220,8 @@ public class ViewUtils {
      */
     public static final float getFloat(View view) {
         Utils.requireNonNull(view);
-        return Float.parseFloat(getString(view));
+        String str = getString(view);
+        return Utils.isEmpty(str) ? 0 : Float.parseFloat(str);
     }
 
     /**
@@ -230,7 +232,8 @@ public class ViewUtils {
      */
     public static final double getDouble(View view) {
         Utils.requireNonNull(view);
-        return Double.parseDouble(getString(view));
+        String str = getString(view);
+        return Utils.isEmpty(str) ? 0 : Double.parseDouble(str);
     }
 
     /**
@@ -241,7 +244,8 @@ public class ViewUtils {
      */
     public static final boolean getBoolean(View view) {
         Utils.requireNonNull(view);
-        return Boolean.parseBoolean(getString(view));
+        String str = getString(view);
+        return Utils.isEmpty(str) ? false : Boolean.parseBoolean(str);
     }
 
     /**
@@ -252,7 +256,8 @@ public class ViewUtils {
      */
     public static final long getLone(View view) {
         Utils.requireNonNull(view);
-        return Long.parseLong(getString(view));
+        String str = getString(view);
+        return Utils.isEmpty(str) ? 0 : Long.parseLong(str);
     }
 
 
@@ -278,7 +283,8 @@ public class ViewUtils {
      */
     public static final int getIntByHint(View view) {
         Utils.requireNonNull(view);
-        return Integer.parseInt(getStringByHint(view));
+        String str = getStringByHint(view);
+        return Utils.isEmpty(str) ? 0 : Integer.parseInt(str);
     }
 
     /**
@@ -289,7 +295,8 @@ public class ViewUtils {
      */
     public static final float getFloatByHint(View view) {
         Utils.requireNonNull(view);
-        return Float.parseFloat(getStringByHint(view));
+        String str = getStringByHint(view);
+        return Utils.isEmpty(str) ? 0 : Float.parseFloat(str);
     }
 
     /**
@@ -300,7 +307,8 @@ public class ViewUtils {
      */
     public static final double getDoubleByHint(View view) {
         Utils.requireNonNull(view);
-        return Double.parseDouble(getStringByHint(view));
+        String str = getStringByHint(view);
+        return Utils.isEmpty(str) ? 0 : Double.parseDouble(str);
     }
 
     /**
@@ -311,7 +319,8 @@ public class ViewUtils {
      */
     public static final boolean getBooleanByHint(View view) {
         Utils.requireNonNull(view);
-        return Boolean.parseBoolean(getStringByHint(view));
+        String str = getStringByHint(view);
+        return Utils.isEmpty(str) ? false : Boolean.parseBoolean(str);
     }
 
     /**
@@ -322,6 +331,7 @@ public class ViewUtils {
      */
     public static final long getLoneByHint(View view) {
         Utils.requireNonNull(view);
-        return Long.parseLong(getStringByHint(view));
+        String str = getStringByHint(view);
+        return Utils.isEmpty(str) ? 0 : Long.parseLong(str);
     }
 }
