@@ -13,10 +13,10 @@ allprojects {
     }
 }
 ```
-在Model的build.gradle中添加
+在Model的build.gradle中添加 [![](https://jitpack.io/v/ftmtshuashua/ToolKit.svg)](https://jitpack.io/#ftmtshuashua/ToolKit)
 ```
 dependencies {
-    implementation 'com.github.ftmtshuashua:ToolKit:v1.0.1'
+    implementation 'com.github.ftmtshuashua:ToolKit:version'
 }
 ```
 该项目在AndroidX基础上搭建,需要以下库
