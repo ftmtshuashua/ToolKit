@@ -10,7 +10,7 @@ import java.util.LinkedList;
  * Function:
  *      obtain()    :获得一个实例
  *      recycle()   :回收实例
- *      create()    :创建实例
+ *      create()    :创建实例(重构)
  *
  * Created by LiFuPing on 2018/6/26.
  *
@@ -63,7 +63,7 @@ public abstract class ObjectCacheUtils<R, W> {
      * @param r 关联对象
      * @return 对象实例
      */
-    public abstract W create(R... r);
+    protected abstract W create(R... r);
 
 
 }

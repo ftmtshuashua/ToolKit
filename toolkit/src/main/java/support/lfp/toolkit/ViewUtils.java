@@ -1,7 +1,9 @@
 package support.lfp.toolkit;
 
+import android.app.Activity;
 import android.os.Build;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -334,4 +336,6 @@ public class ViewUtils {
         String str = getStringByHint(view);
         return Utils.isEmpty(str) ? 0 : Long.parseLong(str);
     }
+
+
 }

@@ -35,6 +35,17 @@ public class ThreadHelper {
     }
 
     /**
+     * 在主线程延时执行业务逻辑
+     *
+     * @param runnable    The runnable
+     * @param delayMillis 等待时间
+     */
+    public static final void mainDelayed(Runnable runnable, long delayMillis) {
+        if (Looper.getMainLooper() == Looper.myLooper()) runnable.run();
+        else mHandler.postDelayed(runnable, delayMillis);
+    }
+
+    /**
      * 在IO线程执行业务逻辑
      *
      * @param runnable The runnable
@@ -51,6 +62,9 @@ public class ThreadHelper {
     public static final void computation(Runnable runnable) {
         Pool_Computation.submit(runnable);
     }
+
+
+    public
 
 
     /**

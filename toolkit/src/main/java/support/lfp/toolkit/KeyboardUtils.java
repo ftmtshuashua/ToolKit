@@ -29,8 +29,6 @@ import java.lang.reflect.Field;
  *      unregisterSoftInputChangedListener():反注册虚拟键盘变化监听
  *      fixAndroidBug5497()                 :修复Android 5497号BUG
  *      fixSoftInputLeaks()                 :修复虚拟键盘泄露问题
- *      clickBlankArea2HideSoftInput()      :点击区域隐藏虚拟键盘，详情查看源码
- *
  *
  *
  * Created by LiFuPing on 2018/6/27.
@@ -256,45 +254,6 @@ public class KeyboardUtils {
                 th.printStackTrace();
             }
         }
-    }
-
-    /**
-     * Click blankj area to hide soft input.
-     * <p>Copy the following code in ur activity.</p>
-     */
-    public static void clickBlankArea2HideSoftInput() {
-        Log.i("KeyboardUtils", "Please refer to the following code.");
-        /*
-        @Override
-        public boolean dispatchTouchEvent(MotionEvent ev) {
-            if (ev.getAction() == MotionEvent.ACTION_DOWN) {
-                View v = getCurrentFocus();
-                if (isShouldHideKeyboard(v, ev)) {
-                    InputMethodManager imm =
-                            (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(v.getWindowToken(),
-                            InputMethodManager.HIDE_NOT_ALWAYS
-                    );
-                }
-            }
-            return super.dispatchTouchEvent(ev);
-        }
-
-        // Return whether touch the view.
-        private boolean isShouldHideKeyboard(View v, MotionEvent event) {
-            if (v != null && (v instanceof EditText)) {
-                int[] l = {0, 0};
-                v.getLocationInWindow(l);
-                int left = l[0],
-                        top = l[1],
-                        bottom = top + v.getHeight(),
-                        right = left + v.getWidth();
-                return !(event.getX() > left && event.getX() < right
-                        && event.getY() > top && event.getY() < bottom);
-            }
-            return false;
-        }
-        */
     }
 
     public interface OnSoftInputChangedListener {
