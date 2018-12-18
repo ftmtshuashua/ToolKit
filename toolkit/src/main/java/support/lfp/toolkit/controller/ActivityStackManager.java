@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 import support.lfp.toolkit.AppUtils;
+import support.lfp.toolkit.BarUtils;
 
 /**
  * <pre>
@@ -32,10 +33,9 @@ import support.lfp.toolkit.AppUtils;
  * Created by LiFuPing on 2018/10/31 11:09
  * </pre>
  */
-public class ActivityStackManagerUtils {
+public class ActivityStackManager {
     private static final boolean isDebug = false;
     private static final String TAG = "ASMUtils";
-
 
     /**
      * 初始化Activity栈管理器

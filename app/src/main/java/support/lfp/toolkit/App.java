@@ -2,7 +2,7 @@ package support.lfp.toolkit;
 
 import android.app.Application;
 
-import support.lfp.toolkit.controller.ActivityStackManagerUtils;
+import support.lfp.toolkit.controller.ActivityStackManager;
 
 /**
  * <pre>
@@ -17,7 +17,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        ActivityStackManagerUtils.init(this);
+        ActivityStackManager.init(this);
         ToolKit.init(this);
     }
 }

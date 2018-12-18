@@ -47,7 +47,7 @@ import java.util.Map;
  *
  * protected:
  *      entryRemoved()      :当缓存被清理的时候
- *      create()            :创建一个数据对象
+ *      onCreate()            :创建一个数据对象
  *      sizeOf()            :计算数据的大小
  *
  * Created by LiFuPing on 2018/8/6.
@@ -99,12 +99,12 @@ public class LruCache<K, V> {
 
     /**
      * Returns the value for {@code key} if it exists in the cache or can be
-     * created by {@code #create}. If a value was returned, it is moved to the
+     * created by {@code #onCreate}. If a value was returned, it is moved to the
      * head of the queue. This returns null if a value is not cached and cannot
      * be created.
      * <br>
-     * 获得缓存个中的数据，如果缓存中没有数据会调用{@code create()}方法获取一个新的数据。
-     * 如果{@code create()}方法未返回数据则返回null
+     * 获得缓存个中的数据，如果缓存中没有数据会调用{@code onCreate()}方法获取一个新的数据。
+     * 如果{@code onCreate()}方法未返回数据则返回null
      *
      * @param key The key
      * @return The value
@@ -125,9 +125,9 @@ public class LruCache<K, V> {
         }
 
         /*
-         * Attempt to create a value. This may take a long time, and the map
-         * may be different when create() returns. If a conflicting value was
-         * added to the map while create() was working, we leave that value in
+         * Attempt to onCreate a value. This may take a long time, and the map
+         * may be different when onCreate() returns. If a conflicting value was
+         * added to the map while onCreate() was working, we leave that value in
          * the map and release the created value.
          */
 

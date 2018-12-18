@@ -9,6 +9,8 @@ import android.os.Build;
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresPermission;
+import support.lfp.toolkit.blankj.Blankj_BarUtils;
+
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.KeyCharacterMap;
@@ -52,7 +54,7 @@ import static android.Manifest.permission.EXPAND_STATUS_BAR;
  * Created by LiFuPing on 2017/9/6.
  * </pre>
  */
-public class BarUtils {
+public class BarUtils extends Blankj_BarUtils {
     private static final String VIEW_TAG_COLOR = "VIEW_TAG_COLOR";
     private static final int TAG_OFFSET_VIEW_MARGIN = -973542;
     private static final int TAG_OFFSET_VIEW_PADDING_STATUS_BAR = -973543;
