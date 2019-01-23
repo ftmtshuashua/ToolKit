@@ -86,6 +86,12 @@ public class LogUtils {
         isDebug = debug;
     }
 
+    /**
+     * 获得LogUtils当前状态
+     */
+    public static final boolean isDebug() {
+        return isDebug;
+    }
 
     public static boolean isLoggable(String tag, int level) {
         return Log.isLoggable(tag, level);
