@@ -7,10 +7,11 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import androidx.annotation.RequiresPermission;
-import androidx.core.content.FileProvider;
 
 import java.io.File;
+
+import androidx.annotation.RequiresPermission;
+import androidx.core.content.FileProvider;
 
 import static android.Manifest.permission.CALL_PHONE;
 
@@ -47,12 +48,12 @@ public class IntentUtils {
      * <p>Target APIs greater than 25 must hold
      * {@code <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />}</p>
      *
-     * @param c      The context.
+     * @param c        The context.
      * @param filePath The path of file.
      * @return the intent of install app
      */
-    public static Intent getInstallAppIntent(final Context c,final String filePath) {
-        return getInstallAppIntent(c,getFileByPath(filePath), false);
+    public static Intent getInstallAppIntent(final Context c, final String filePath) {
+        return getInstallAppIntent(c, getFileByPath(filePath), false);
     }
 
     /**
@@ -60,12 +61,12 @@ public class IntentUtils {
      * <p>Target APIs greater than 25 must hold
      * {@code <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />}</p>
      *
-     * @param c      The context.
+     * @param c    The context.
      * @param file The file.
      * @return the intent of install app
      */
-    public static Intent getInstallAppIntent(final Context c,final File file) {
-        return getInstallAppIntent(c,file, false);
+    public static Intent getInstallAppIntent(final Context c, final File file) {
+        return getInstallAppIntent(c, file, false);
     }
 
     /**
@@ -73,13 +74,13 @@ public class IntentUtils {
      * <p>Target APIs greater than 25 must hold
      * {@code <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />}</p>
      *
-     * @param c      The context.
+     * @param c         The context.
      * @param filePath  The path of file.
      * @param isNewTask True to add flag of new task, false otherwise.
      * @return the intent of install app
      */
-    public static Intent getInstallAppIntent(final Context c,final String filePath, final boolean isNewTask) {
-        return getInstallAppIntent(c,getFileByPath(filePath), isNewTask);
+    public static Intent getInstallAppIntent(final Context c, final String filePath, final boolean isNewTask) {
+        return getInstallAppIntent(c, getFileByPath(filePath), isNewTask);
     }
 
     /**
@@ -87,12 +88,12 @@ public class IntentUtils {
      * <p>Target APIs greater than 25 must hold
      * {@code <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />}</p>
      *
-     * @param c      The context.
+     * @param c         The context.
      * @param file      The file.
      * @param isNewTask True to add flag of new task, false otherwise.
      * @return the intent of install app
      */
-    public static Intent getInstallAppIntent(final Context c,final File file, final boolean isNewTask) {
+    public static Intent getInstallAppIntent(final Context c, final File file, final boolean isNewTask) {
         if (file == null) return null;
         Intent intent = new Intent(Intent.ACTION_VIEW);
         Uri data;
@@ -135,23 +136,23 @@ public class IntentUtils {
     /**
      * Return the intent of launch app.
      *
-     * @param c The context.
+     * @param c           The context.
      * @param packageName The name of the package.
      * @return the intent of launch app
      */
-    public static Intent getLaunchAppIntent(final Context c,final String packageName) {
-        return getLaunchAppIntent(c,packageName, false);
+    public static Intent getLaunchAppIntent(final Context c, final String packageName) {
+        return getLaunchAppIntent(c, packageName, false);
     }
 
     /**
      * Return the intent of launch app.
      *
-     * @param c The context.
+     * @param c           The context.
      * @param packageName The name of the package.
      * @param isNewTask   True to add flag of new task, false otherwise.
      * @return the intent of launch app
      */
-    public static Intent getLaunchAppIntent(final Context c,final String packageName, final boolean isNewTask) {
+    public static Intent getLaunchAppIntent(final Context c, final String packageName, final boolean isNewTask) {
         Intent intent = c.getPackageManager().getLaunchIntentForPackage(packageName);
         if (intent == null) return null;
         return getIntent(intent, isNewTask);
@@ -482,7 +483,6 @@ public class IntentUtils {
     private static File getFileByPath(final String filePath) {
         return Utils.isSpace(filePath) ? null : new File(filePath);
     }
-
 
 
 }

@@ -9,6 +9,6 @@ package support.lfp.toolkit.action;
  * </pre>
  */
 @FunctionalInterface
-public interface Action5<A, B, C, D,E> {
-    void call(A a, B b, C c, D d ,E e);
+public interface Action5<T1, T2, T3, T4, T5> {
+    void call(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5);
 }
