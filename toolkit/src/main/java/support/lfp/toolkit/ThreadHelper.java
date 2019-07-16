@@ -41,8 +41,7 @@ public class ThreadHelper {
      * @param delayMillis 等待时间
      */
     public static final void mainDelayed(Runnable runnable, long delayMillis) {
-        if (Looper.getMainLooper() == Looper.myLooper()) runnable.run();
-        else mHandler.postDelayed(runnable, delayMillis);
+        mHandler.postDelayed(runnable, delayMillis);
     }
 
     /**
@@ -64,22 +63,19 @@ public class ThreadHelper {
     }
 
 
-    public
-
-
     /**
      * 获得CPU核心数目
      *
-     * @return int
+     * @return int CPU核心数目,获取失败时返回 1
      */
-    static int getCpuNumCores() {
+    public static int getCpuNumCores() {
         try {
             File dir = new File("/sys/devices/system/cpu/");
             File[] files = dir.listFiles(new CpuFilter());
             return files.length;
         } catch (Exception e) {
             e.printStackTrace();
-            return 2;
+            return 1;
         }
     }
 
