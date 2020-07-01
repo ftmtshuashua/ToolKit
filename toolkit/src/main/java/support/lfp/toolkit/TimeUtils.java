@@ -1,7 +1,15 @@
 package support.lfp.toolkit;
 
 import android.annotation.SuppressLint;
-import androidx.annotation.NonNull;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.FloatRange;
+import android.support.annotation.IntRange;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.annotation.RequiresPermission;
+import android.support.v4.content.ContextCompat;
+import android.support.annotation.IntDef;
 
 import support.lfp.toolkit.constant.TimeConstants;
 

@@ -10,8 +10,16 @@ import android.provider.MediaStore;
 
 import java.io.File;
 
-import androidx.annotation.RequiresPermission;
-import androidx.core.content.FileProvider;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.FloatRange;
+import android.support.annotation.IntRange;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.annotation.RequiresPermission;
+import android.support.v4.content.ContextCompat;
+import android.support.annotation.IntDef;
+import android.support.v4.content.FileProvider;
 
 import static android.Manifest.permission.CALL_PHONE;
 

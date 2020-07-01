@@ -5,7 +5,15 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.FloatRange;
+import android.support.annotation.IntRange;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.annotation.RequiresPermission;
+import android.support.v4.content.ContextCompat;
+import android.support.annotation.IntDef;
 import android.util.Log;
 
 import java.lang.reflect.Field;

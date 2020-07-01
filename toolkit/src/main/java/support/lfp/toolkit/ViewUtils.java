@@ -2,13 +2,13 @@ package support.lfp.toolkit;
 
 import android.app.Activity;
 import android.os.Build;
+import android.support.v4.view.ViewCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.core.view.ViewCompat;
 import support.lfp.toolkit.action.Action2;
 
 

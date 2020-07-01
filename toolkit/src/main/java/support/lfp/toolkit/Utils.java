@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
 import android.os.Looper;
+import android.support.annotation.Nullable;
+import android.support.v4.util.LongSparseArray;
+import android.support.v4.util.SimpleArrayMap;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
@@ -16,11 +19,15 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.collection.LongSparseArray;
-import androidx.collection.SimpleArrayMap;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.FloatRange;
+import android.support.annotation.IntRange;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.annotation.RequiresPermission;
+import android.support.v4.content.ContextCompat;
+import android.support.annotation.IntDef;
 import support.lfp.toolkit.action.Action1;
 
 

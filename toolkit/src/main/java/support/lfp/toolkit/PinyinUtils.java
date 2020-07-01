@@ -1,6 +1,7 @@
 package support.lfp.toolkit;
 
-import androidx.collection.SimpleArrayMap;
+
+import android.support.v4.util.SimpleArrayMap;
 
 /**
  * <pre>

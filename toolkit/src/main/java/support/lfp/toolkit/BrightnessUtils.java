@@ -5,8 +5,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
-import androidx.annotation.IntRange;
-import androidx.annotation.NonNull;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.FloatRange;
+import android.support.annotation.IntRange;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.annotation.RequiresPermission;
+import android.support.v4.content.ContextCompat;
 import android.view.Window;
 import android.view.WindowManager;
 

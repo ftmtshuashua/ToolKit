@@ -1,9 +1,14 @@
 package support.lfp.toolkit;
 
 import android.graphics.Color;
-import androidx.annotation.ColorInt;
-import androidx.annotation.FloatRange;
-import androidx.annotation.IntRange;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.FloatRange;
+import android.support.annotation.IntRange;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.annotation.RequiresPermission;
+import android.support.v4.content.ContextCompat;
 
 /**
  * <pre>

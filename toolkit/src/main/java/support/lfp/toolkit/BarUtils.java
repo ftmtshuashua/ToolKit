@@ -6,11 +6,11 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Build;
-import androidx.annotation.ColorInt;
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresPermission;
 import support.lfp.toolkit.blankj.Blankj_BarUtils;
 
+import android.support.annotation.ColorInt;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresPermission;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.KeyCharacterMap;
