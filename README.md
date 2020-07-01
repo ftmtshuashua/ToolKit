@@ -22,9 +22,9 @@ dependencies {
     implementation 'com.github.ftmtshuashua:ToolKit:version'
 }
 ```
-该项目在AndroidX基础上搭建,需要以下库
+该项目在Suppert基础上搭建,需要以下库
 ```
-implementation 'androidx.appcompat:appcompat:version'
+implementation 'com.android.support:appcompat-v7:version'
 ```
 
 
