@@ -30,7 +30,7 @@ import java.util.RandomAccess;
  *      copyOf()            :拷贝数组中元素到一个新的数组
  *      copyOfRange()       :拷贝数组中元素到一个新的数组
  *
- * Created by LiFuPing on 2017/9/6.
+ * Created by ACap on 2017/9/6.
  * </pre>
  */
 public class ArraysUtils {

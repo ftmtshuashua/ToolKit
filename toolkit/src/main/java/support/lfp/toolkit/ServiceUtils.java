@@ -22,7 +22,7 @@ import java.util.Set;
  *      unbindService()             :解绑服务
  *      isServiceRunning()          :判断服务运行状态
  *
- * Created by LiFuPing on 2018/6/28.
+ * Created by ACap on 2018/6/28.
  * </pre>
  */
 public class ServiceUtils {

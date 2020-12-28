@@ -6,7 +6,7 @@ package support.lfp.toolkit.constant;
  *
  * function:
  *
- * Created by LiFuPing on 2018/6/28.
+ * Created by ACap on 2018/6/28.
  * </pre>
  */
 public final class  RegexConstants {

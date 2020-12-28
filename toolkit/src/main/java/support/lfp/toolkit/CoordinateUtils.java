@@ -14,7 +14,7 @@ import static java.lang.Math.PI;
  *      bd09ToWGS84()   :BD09  转 WGS84
  *      wgs84ToBd09()   :WGS84 转 BD09
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class CoordinateUtils {

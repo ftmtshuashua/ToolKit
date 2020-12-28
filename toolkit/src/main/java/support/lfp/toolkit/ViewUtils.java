@@ -34,7 +34,7 @@ import support.lfp.toolkit.action.Action2;
  *      getLong()               :获得Long类型数据
  *      getLongByHint()         :获得Long类型数据,来自Hint值
  *
- * Created by LiFuPing on 2018/5/30.
+ * Created by ACap on 2018/5/30.
  * </pre>
  */
 public class ViewUtils {

@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
  *
  * Function:
  *
- * Created by LiFuPing on 2018/11/21 13:48
+ * Created by ACap on 2018/11/21 13:48
  * </pre>
  */
 public class ThreadHelper {

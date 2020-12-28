@@ -11,7 +11,7 @@ import android.content.Context;
  *      init()      :初始化工具集
  *
  *
- * Created by LiFuPing on 2018/10/31 13:46
+ * Created by ACap on 2018/10/31 13:46
  * </pre>
  */
 public class ToolKit {

@@ -52,7 +52,7 @@ import static android.Manifest.permission.WRITE_SETTINGS;
  *      setSleepDuration()  :设定锁屏时间
  *      getSleepDuration()  :获得锁屏时间
  *
- * Created by LiFuPing on 2017/9/29.
+ * Created by ACap on 2017/9/29.
  * </pre>
  */
 public class ScreenUtils {

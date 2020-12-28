@@ -19,7 +19,7 @@ import java.text.MessageFormat;
  *      setDebug()  :启用和关闭日志输出
  *
  *
- * Created by LiFuPing on 2018/11/7 10:24
+ * Created by ACap on 2018/11/7 10:24
  * </pre>
  */
 public class LogUtils {

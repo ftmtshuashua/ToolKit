@@ -12,7 +12,7 @@ import java.util.LinkedList;
  *      recycle()   :回收实例
  *      onCreate()    :创建实例(重构)
  *
- * Created by LiFuPing on 2018/6/26.
+ * Created by ACap on 2018/6/26.
  *
  * @param <R> 关联对象，某些时候我们创建一个缓存对象需要通过其他对象的参数来创建的时候就可以利用该参数
  * @param <W> 输出对象，也就是被缓存的对象

@@ -21,7 +21,7 @@ import java.net.URLEncoder;
  *      htmlEncode()            :html编码
  *      htmlDecode()            :html解码
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class EncodeUtils {

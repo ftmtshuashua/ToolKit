@@ -19,7 +19,7 @@ import android.net.Uri;
  *      copyIntent()    :复制意图到剪贴板
  *      getIntent()     :获取剪贴板的意图
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class ClipboardUtils {

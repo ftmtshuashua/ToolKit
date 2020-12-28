@@ -50,7 +50,7 @@ import java.util.Map;
  *      onCreate()            :创建一个数据对象
  *      sizeOf()            :计算数据的大小
  *
- * Created by LiFuPing on 2018/8/6.
+ * Created by ACap on 2018/8/6.
  * </pre>
  */
 public class LruCache<K, V> {

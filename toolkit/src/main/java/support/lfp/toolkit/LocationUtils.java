@@ -47,7 +47,7 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
  *      isSameProvider()            :是否相同的提供者
  *      OnLocationChangeListener    :位置刷新的回调接口
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class LocationUtils {

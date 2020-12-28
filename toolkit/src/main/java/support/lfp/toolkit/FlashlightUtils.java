@@ -23,7 +23,7 @@ import static android.hardware.Camera.Parameters.FLASH_MODE_TORCH;
  *      isFlashlightOn()        :检查手电筒是否打开
  *      isFlashlightEnable()    :检查是否支持手电筒
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class FlashlightUtils {

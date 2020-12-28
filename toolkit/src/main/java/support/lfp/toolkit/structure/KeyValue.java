@@ -9,7 +9,7 @@ package support.lfp.toolkit.structure;
  *      getKey()        :获得Key
  *      getValue()      :获得Value
  *
- * Created by LiFuPing on 2018/8/6.
+ * Created by ACap on 2018/8/6.
  * </pre>
  */
 public class KeyValue<K, V> {

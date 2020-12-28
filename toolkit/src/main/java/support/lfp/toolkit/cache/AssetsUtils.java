@@ -21,7 +21,7 @@ import support.lfp.toolkit.ArraysUtils;
  *      getAssetPicPath()       :获得Asset目录列表
  *      getAssetsBitmap()       :获得Assets中的图片
  *
- * Created by LiFuPing on 2018/7/26.
+ * Created by ACap on 2018/7/26.
  * </pre>
  */
 public class AssetsUtils {

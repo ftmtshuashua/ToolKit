@@ -14,7 +14,7 @@ import android.support.v4.util.SimpleArrayMap;
  *      getSurnamePinyin()          :根据名字获取姓氏的拼音
  *      getSurnameFirstLetter()     :根据名字获取姓氏的首字母
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class PinyinUtils {

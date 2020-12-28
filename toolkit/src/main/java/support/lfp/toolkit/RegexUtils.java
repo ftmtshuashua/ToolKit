@@ -28,7 +28,7 @@ import support.lfp.toolkit.constant.RegexConstants;
  *      isMatch()           :匹配自定义正则
  *      getMatches()        :获得匹配的数据
  *
- * Created by LiFuPing on 2018/6/28.
+ * Created by ACap on 2018/6/28.
  * </pre>
  */
 public class RegexUtils {

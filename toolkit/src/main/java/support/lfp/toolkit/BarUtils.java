@@ -51,7 +51,7 @@ import static android.Manifest.permission.EXPAND_STATUS_BAR;
  *      getNavigationBarColor():                        :获得导航栏颜色
  *      hasNavigationBar()                              :判断导航栏是否显示
  *
- * Created by LiFuPing on 2017/9/6.
+ * Created by ACap on 2017/9/6.
  * </pre>
  */
 public class BarUtils extends Blankj_BarUtils {

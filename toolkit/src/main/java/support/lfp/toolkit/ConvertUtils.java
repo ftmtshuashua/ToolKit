@@ -66,7 +66,7 @@ import support.lfp.toolkit.constant.TimeConstants;
  *      sp2px()
  *      px2sp()
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class ConvertUtils {

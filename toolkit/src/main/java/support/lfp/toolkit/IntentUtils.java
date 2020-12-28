@@ -41,7 +41,7 @@ import static android.Manifest.permission.CALL_PHONE;
  *      getSendSmsIntent()                  :发送短信
  *      getCaptureIntent()                  :照相
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class IntentUtils {

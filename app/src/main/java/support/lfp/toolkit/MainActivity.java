@@ -12,7 +12,7 @@ import support.lfp.toolkit.cache.AssetsUtils;
  *
  * Function:
  *
- * Created by LiFuPing on 2018/11/28 17:19
+ * Created by ACap on 2018/11/28 17:19
  * </pre>
  */
 public class MainActivity extends AppCompatActivity {

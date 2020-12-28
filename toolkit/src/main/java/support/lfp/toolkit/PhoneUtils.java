@@ -52,7 +52,7 @@ import static android.Manifest.permission.SEND_SMS;
  *      sendSmsSilent()         :直接发送短信
  *      getPhoneOnlyTag()       :通过设备信息计算的唯一标识
  *
- * Created by LiFuPing on 2018/6/1.
+ * Created by ACap on 2018/6/1.
  * </pre>
  */
 public class PhoneUtils {

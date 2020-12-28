@@ -24,7 +24,7 @@ import java.lang.annotation.RetentionPolicy;
  *      MB      :1 kb = 1048576 byte
  *      GB      :1 kb = 1073741824 byte
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public final class MemoryConstants {

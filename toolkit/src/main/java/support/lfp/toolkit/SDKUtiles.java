@@ -42,7 +42,7 @@ import android.os.Build;
  *      P                       9.0         28
  *
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class SDKUtiles {

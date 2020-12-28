@@ -57,7 +57,7 @@ import java.util.Locale;
  *      getZodiac()                 :获取星座
  *
  *
- * Created by LiFuPing on 2018/6/29.
+ * Created by ACap on 2018/6/29.
  * </pre>
  */
 public class TimeUtils {

@@ -8,7 +8,7 @@ package support.lfp.toolkit;
  *
  * Function:
  *
- * Created by LiFuPing on 2018/12/28 16:07
+ * Created by ACap on 2018/12/28 16:07
  * </pre>
  */
 public class ThrottleUtils {

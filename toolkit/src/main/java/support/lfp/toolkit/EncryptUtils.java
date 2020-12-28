@@ -34,7 +34,7 @@ import javax.crypto.spec.SecretKeySpec;
  *      encrypt**() :加密方法
  *      decrypt**() :解密方法
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class EncryptUtils {

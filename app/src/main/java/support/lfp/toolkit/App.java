@@ -10,7 +10,7 @@ import support.lfp.toolkit.controller.ActivityStackManager;
  *
  * Function:
  *
- * Created by LiFuPing on 2018/10/31 11:24
+ * Created by ACap on 2018/10/31 11:24
  * </pre>
  */
 public class App extends Application {

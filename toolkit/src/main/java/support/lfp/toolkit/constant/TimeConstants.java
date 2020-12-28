@@ -19,7 +19,7 @@ import java.lang.annotation.RetentionPolicy;
  *
  * function:
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public final class TimeConstants {

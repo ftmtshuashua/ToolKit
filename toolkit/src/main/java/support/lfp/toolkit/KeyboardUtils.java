@@ -31,7 +31,7 @@ import java.lang.reflect.Field;
  *      fixSoftInputLeaks()                 :修复虚拟键盘泄露问题
  *
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class KeyboardUtils {

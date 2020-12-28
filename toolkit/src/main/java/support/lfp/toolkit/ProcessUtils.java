@@ -43,7 +43,7 @@ import static android.Manifest.permission.KILL_BACKGROUND_PROCESSES;
  *      isMainProcess()                 :判断是否为主进程
  *      getCurrentProcessName()         :返回当前进程名称
  *
- * Created by LiFuPing on 2018/6/28.
+ * Created by ACap on 2018/6/28.
  * </pre>
  */
 public class ProcessUtils {

@@ -37,7 +37,7 @@ import android.support.v4.content.ContextCompat;
  *      getBlueRatio()      :获得颜色Blue的比例
  *      getAlphaRatio()     :获得颜色Alpha的比例
  *
- * Created by LiFuPing on 2018/7/2.
+ * Created by ACap on 2018/7/2.
  * </pre>
  */
 public class ColorUtils {

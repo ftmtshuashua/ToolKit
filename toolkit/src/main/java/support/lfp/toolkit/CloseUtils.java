@@ -11,7 +11,7 @@ import java.io.IOException;
  * Function:
  *      closeIO()   :关闭IO
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class CloseUtils {

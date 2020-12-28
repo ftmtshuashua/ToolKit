@@ -24,7 +24,7 @@ import java.util.zip.ZipOutputStream;
  *      压缩工具
  * Function:
  *
- * Created by LiFuPing on 2018/6/29.
+ * Created by ACap on 2018/6/29.
  * </pre>
  */
 public class ZipUtils {

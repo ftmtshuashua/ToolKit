@@ -42,7 +42,7 @@ import support.lfp.toolkit.action.Action1;
  *      equals()        :比较两个对象是否相等
  *      isMainThread()  :判断是否为主线程
  *
- * Created by LiFuPing on 2018/5/30.
+ * Created by ACap on 2018/5/30.
  * </pre>
  */
 public class Utils {

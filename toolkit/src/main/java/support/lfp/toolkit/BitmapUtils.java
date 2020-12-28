@@ -88,7 +88,7 @@ import support.lfp.toolkit.constant.MemoryConstants;
  *      compressBySampleSize()      :通过改变采样率来压缩
  *      getBitmapSize()             :获得Bitmap的大小
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class BitmapUtils {

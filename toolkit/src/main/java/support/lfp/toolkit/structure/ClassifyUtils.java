@@ -16,7 +16,7 @@ import java.util.Iterator;
  *      getArray()      :通过组获得组被归类的数据
  *
  *
- * Created by LiFuPing on 2018/8/6.
+ * Created by ACap on 2018/8/6.
  * </pre>
  */
 public class ClassifyUtils<K, V> {

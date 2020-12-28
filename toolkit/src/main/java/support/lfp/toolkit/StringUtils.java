@@ -17,7 +17,7 @@ package support.lfp.toolkit;
  *      toDBC()             :字符串转半角
  *      toSBC()             :字符串转全角
  *
- * Created by LiFuPing on 2018/6/29.
+ * Created by ACap on 2018/6/29.
  * </pre>
  */
 public class StringUtils {

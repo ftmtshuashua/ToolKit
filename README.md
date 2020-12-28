@@ -1,9 +1,75 @@
 # ToolKit
-[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
+[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
 
 
-`ToolKit`是Androd开发基础工具集，包含所有常用工具
-[ToolKit_AndroidX](https://github.com/ftmtshuashua/ToolKit_AndroidX)
+`ToolKit`是Android开发基础工具集，收集了一些常用工具 
+
+###包与类说明
+action:     适配Lambda语法的CallBack和Call的接口定义
+
+analysis:   辅助分析类助手相关
+
+app:        应用程序相关工具
+    AppUtils:应用管理
+    BarUtils:StateBar管理
+    ClipboardUtils:剪切板管理
+    IntentUtils:公用跳转
+    ServiceUtils:服务管理
+
+cache:      数据缓存相关
+
+codec:      编解码相关
+    Base64Utils:Base64编解码
+    DESUtils:DES编解码
+    MD5Utils:MD5编码
+    RSAUtils:RSA编解码
+    SHAUtils:SHA编码
+    UrlUtils:Url编解码
+    ZipUtils:文件压缩与解压
+
+log:
+
+phone:      设备相关
+    CpuUtils:Cpu信息
+    DeviceUtils:设备信息
+    FlashlightUtils:手电筒管理
+    GpsUtils:GPS管理
+    KeyboardUtils:虚拟键盘
+    NetworkUtils:网络管理
+    ProcessUtils:进程管理
+    SdkUtils:系统版本检查
+    ShellUtils:Shell脚本运行
+    ScreenUtils:屏幕相关
+
+source:     数据源 
+    AssetsUtils:读取Assets文件夹中的数据
+    RawUtils:读取Raw文件夹中的数据
+    InternalFileUtils:读写(./data/data/包名)目录的数据
+    ExternalFileUtils:读写(Sdcard)目录的数据
+    
+structure:  数据结构
+    DataGroup:数据分组工具
+    KeyValue:Key-value的数据结构
+
+thread:     线程工具
+    ThreadHelper:线程切换工具
+
+transform:  数据转换和变换相关
+    ArraysUtils:数组转化
+    BitmapUtils:图像处理
+    BytesUtils:字节数组转化
+    ColorUtils:颜色转化
+    GpsCoordinateTransformUtils:Gps坐标转换
+    LunarUtils:日历相关
+    PinyinUtils:汉字转拼音
+    TimeUtils:时间转化
+    StringUtils:字符串相关
+    
+view:       View相关
+
+
+
+ToolKit:工具集初始化入口
 
 
 ## 配置依赖

@@ -13,7 +13,7 @@ import java.util.List;
  * Function:
  *      execCmd()   :运行命令
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class ShellUtils {

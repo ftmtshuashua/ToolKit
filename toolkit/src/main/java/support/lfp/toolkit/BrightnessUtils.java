@@ -29,7 +29,7 @@ import android.view.WindowManager;
  *      setWindowBrightness()       :设置窗口亮度
  *      getWindowBrightness()       :获取窗口亮度
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public   class BrightnessUtils {

@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
  *      getCupInfo()            :获得CPU信息
  *
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class CpuUtils {

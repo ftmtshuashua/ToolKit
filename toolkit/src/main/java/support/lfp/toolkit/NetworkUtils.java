@@ -60,7 +60,7 @@ import static android.Manifest.permission.MODIFY_PHONE_STATE;
  *      ping()                  :检查网络连通性
  *      getSSID()               :获得SSID
  *
- * Created by LiFuPing on 2018/6/27.
+ * Created by ACap on 2018/6/27.
  * </pre>
  */
 public class NetworkUtils {
