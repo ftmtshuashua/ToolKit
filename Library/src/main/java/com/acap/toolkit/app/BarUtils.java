@@ -16,7 +16,13 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresPermission;
+
+import com.acap.toolkit.phone.DeviceUtils;
+import com.acap.toolkit.transform.ColorUtils;
+import com.acap.toolkit.view.ViewUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -51,7 +57,7 @@ import static android.Manifest.permission.EXPAND_STATUS_BAR;
  * Created by ACap on 2017/9/6.
  * </pre>
  */
-public class BarUtils extends Blankj_BarUtils {
+public class BarUtils {
     private static final String VIEW_TAG_COLOR = "VIEW_TAG_COLOR";
     private static final int TAG_OFFSET_VIEW_MARGIN = -973542;
     private static final int TAG_OFFSET_VIEW_PADDING_STATUS_BAR = -973543;
@@ -141,7 +147,7 @@ public class BarUtils extends Blankj_BarUtils {
                     }
                     decorView.setSystemUiVisibility(vis);
                 }
-            } else if (PhoneUtils.getRom() == PhoneUtils.ROM.MIUI) {
+            } else if (DeviceUtils.getRom() == DeviceUtils.ROM.MIUI) {
                 Class clazz = window.getClass();
                 int darkModeFlag = 0;
                 Class layoutParams = Class.forName("android.view.MiuiWindowManager$LayoutParams");
@@ -153,7 +159,7 @@ public class BarUtils extends Blankj_BarUtils {
                 } else {
                     extraFlagField.invoke(window, 0, darkModeFlag);//清除黑色字体
                 }
-            } else if (PhoneUtils.getRom() == PhoneUtils.ROM.Flyme) {
+            } else if (DeviceUtils.getRom() == DeviceUtils.ROM.Flyme) {
                 WindowManager.LayoutParams lp = window.getAttributes();
                 Field darkFlag = WindowManager.LayoutParams.class.getDeclaredField("MEIZU_FLAG_DARK_STATUS_BAR_ICON");
                 Field meizuFlags = WindowManager.LayoutParams.class.getDeclaredField("meizuFlags");
@@ -288,7 +294,7 @@ public class BarUtils extends Blankj_BarUtils {
      */
     public static void setStatusBarImmersiveView(@NonNull final View v) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) return;
-        setTransparentStatusBar(Utils.getActivityByView(v).getWindow(), true);
+        setTransparentStatusBar(ContextUtils.getActivity(v).getWindow(), true);
         setViewPaddingTopEqualStatusBarHeight(v, true);
     }
 

@@ -1,10 +1,10 @@
 package support.lfp.toolkit;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
-import support.lfp.toolkit.cache.AssetsUtils;
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * <pre>
@@ -20,6 +20,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
-        LogUtils.e(AssetsUtils.getAssetPicPath(this).toString());
     }
 }
