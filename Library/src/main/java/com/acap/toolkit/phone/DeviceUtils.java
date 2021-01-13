@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import androidx.annotation.RequiresPermission;
 
 import com.acap.toolkit.app.AppUtils;
+import com.acap.toolkit.codec.MD5Utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -299,7 +300,7 @@ public class DeviceUtils {
         buffer.append(Build.TAGS);
         buffer.append(Build.TYPE);
         buffer.append(Build.USER);
-        return EncryptUtils.encryptMD5ToString(buffer.toString());
+        return MD5Utils.md5(buffer.toString());
     }
 
     /**
@@ -311,8 +312,8 @@ public class DeviceUtils {
         return MessageFormat.format("设备厂商:{0}\n设备名称:{1}\nAPI:{2} {3}",
                 Build.BOARD + "  " + Build.MANUFACTURER,
                 Build.MODEL,
-                SDKUtiles.getSdkVersion(),
-                SDKUtiles.getSdkVersionName());
+                SdkUtils.getCode(),
+                SdkUtils.getName());
     }
 
 
