@@ -1,17 +1,12 @@
 package com.acap.toolkit;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.os.Build;
 import android.os.Looper;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
 import android.util.SparseLongArray;
-import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.collection.LongSparseArray;
@@ -246,22 +241,6 @@ public class Utils {
         return Looper.getMainLooper() == Looper.myLooper();
     }
 
-    /**
-     * 通过获得View所绑定的Activity
-     *
-     * @param view The view
-     * @return The activity
-     */
-    public static Activity getActivityByView(@NonNull View view) {
-        Context context = view.getContext();
-        while (context instanceof ContextWrapper) {
-            if (context instanceof Activity) {
-                return (Activity) context;
-            }
-            context = ((ContextWrapper) context).getBaseContext();
-        }
-        throw new IllegalStateException("The view's context is not an Activity.");
-    }
 
     /**
      * 获得不为空的数据
