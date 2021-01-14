@@ -253,6 +253,16 @@ public class Utils {
         return obj;
     }
 
+    /**
+     * 获得不为空的数据
+     *
+     * @param obj The data
+     * @return NotNull data
+     */
+    public static String getNotNull(String obj) {
+        if (obj == null) return "";
+        return obj;
+    }
 
     /**
      * 遍历集合
