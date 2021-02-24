@@ -77,7 +77,7 @@ public class ViewSavedStateUtils extends View.BaseSavedState {
 
     private ViewSavedStateUtils(Parcel in) {
         super(in);
-        in.readList(data, Object.class.getClassLoader());
+        in.readList(data, ViewSavedStateUtils.class.getClassLoader());
     }
 
     @Override
