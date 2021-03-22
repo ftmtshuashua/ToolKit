@@ -1,5 +1,7 @@
 package com.acap.toolkit.structure;
 
+import java.text.MessageFormat;
+
 /**
  * <pre>
  * Tip:
@@ -63,6 +65,7 @@ public class KeyValue<K, V> {
 
     @Override
     public String toString() {
-        return "KeyValue{" + "key='" + key + '\'' + ", value=" + value + '}';
+        return MessageFormat.format("{0}:{1}", key, value);
+//        return "KeyValue{" + "key='" + key + '\'' + ", value=" + value + '}';
     }
 }

@@ -2,6 +2,9 @@ package support.lfp.toolkit;
 
 import android.app.Application;
 
+import com.acap.toolkit.log.LogUtils;
+import com.acap.toolkit.phone.DeviceUtils;
+
 /**
  * <pre>
  * Tip:
@@ -15,5 +18,9 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        LogUtils.setDebug(true);
+
+        LogUtils.i("调试设备", DeviceUtils.getPhoneInfo());
+
     }
 }

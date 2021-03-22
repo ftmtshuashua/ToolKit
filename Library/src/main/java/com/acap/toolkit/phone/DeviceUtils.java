@@ -1,6 +1,7 @@
 package com.acap.toolkit.phone;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -11,11 +12,15 @@ import androidx.annotation.RequiresPermission;
 
 import com.acap.toolkit.app.AppUtils;
 import com.acap.toolkit.codec.MD5Utils;
+import com.acap.toolkit.structure.KeyValue;
+import com.acap.toolkit.transform.ArraysUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import static android.Manifest.permission.READ_PHONE_STATE;
 
@@ -309,11 +314,22 @@ public class DeviceUtils {
      * @return String
      */
     public static String getPhoneInfo() {
-        return MessageFormat.format("设备厂商:{0}\n设备名称:{1}\nAPI:{2} {3}",
-                Build.BOARD + "  " + Build.MANUFACTURER,
-                Build.MODEL,
-                SdkUtils.getCode(),
-                SdkUtils.getName());
+
+        List<KeyValue<String, String>> array = new ArrayList<>();
+        array.add(new KeyValue<>("厂商信息", MessageFormat.format("{0} - {1} : {2}", Build.BOARD, Build.MANUFACTURER, Build.MODEL)));
+        array.add(new KeyValue<>("OS", MessageFormat.format("API{0} , {1}", SdkUtils.getCode(), SdkUtils.getName())));
+
+        ActivityManager am = (ActivityManager) AppUtils.getApp().getSystemService(Context.ACTIVITY_SERVICE);
+        array.add(new KeyValue<>("内存信息", MessageFormat.format("{0,number,0.##}MB , Large:{1,number,0.##}MB", am.getMemoryClass(), am.getLargeMemoryClass())));
+
+        int sw = ScreenUtils.getScreenWidth();
+        int sh = ScreenUtils.getScreenHeight();
+        int cd = getCommonDivisor(sw, sh);
+        array.add(new KeyValue<>("屏幕信息", MessageFormat.format("{0,number,0}x{1,number,0}({2})", sw, sh,
+                MessageFormat.format("{0,number,0.##}:{1,number,0.##}", sw / cd, sh / cd)
+        )));
+
+        return ArraysUtils.join(array, "\n");
     }
 
 
@@ -407,5 +423,18 @@ public class DeviceUtils {
         return line;
     }
 
+    //求最大公约数
+    private static final int getCommonDivisor(int x, int y) {
+        int a, b, c;
+        a = x;
+        b = y;
+        /* 余数不为0，继续相除，直到余数为0 */
+        while (b != 0) {
+            c = a % b;
+            a = b;
+            b = c;
+        }
+        return a;
+    }
 
 }
