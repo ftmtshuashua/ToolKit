@@ -2,6 +2,7 @@ package support.lfp.toolkit;
 
 import android.app.Application;
 
+import com.acap.toolkit.app.GlobalCrashIntercept;
 import com.acap.toolkit.log.LogUtils;
 import com.acap.toolkit.phone.DeviceUtils;
 
@@ -19,7 +20,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         LogUtils.setDebug(true);
-
+        GlobalCrashIntercept.init();
         LogUtils.i("调试设备", DeviceUtils.getPhoneInfo());
 
     }
