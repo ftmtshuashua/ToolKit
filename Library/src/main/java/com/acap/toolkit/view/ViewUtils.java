@@ -1,5 +1,6 @@
 package com.acap.toolkit.view;
 
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.view.View;
 import android.view.ViewParent;
@@ -11,6 +12,7 @@ import androidx.core.view.ViewCompat;
 
 import com.acap.toolkit.Utils;
 import com.acap.toolkit.action.Action2;
+import com.acap.toolkit.transform.BitmapUtils;
 
 
 /**
@@ -34,6 +36,7 @@ import com.acap.toolkit.action.Action2;
  *      getBooleanByHint()      :获得Boolean类型数据,来自Hint值
  *      getLong()               :获得Long类型数据
  *      getLongByHint()         :获得Long类型数据,来自Hint值
+ *      getBitmap()             :读取View到Bitmap
  *
  * Created by ACap on 2018/5/30.
  * </pre>
@@ -396,5 +399,19 @@ public class ViewUtils {
         return null;
     }
 
+
+    /**
+     * View截图
+     */
+    public static Bitmap getBitmap(View v) {
+        return BitmapUtils.getBitmap(v);
+    }
+
+    /**
+     * View截图
+     */
+    public static Bitmap getBitmap(View v, Bitmap.Config config) {
+        return BitmapUtils.getBitmap(v, config);
+    }
 
 }

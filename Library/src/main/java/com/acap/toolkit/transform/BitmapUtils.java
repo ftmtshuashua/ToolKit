@@ -227,8 +227,19 @@ public class BitmapUtils {
      * @return bitmap
      */
     public static Bitmap getBitmap(final View view) {
+        return getBitmap(view, Bitmap.Config.ARGB_8888);
+    }
+
+    /**
+     * View to bitmap.
+     *
+     * @param view   The view.
+     * @param config The bitmap config
+     * @return bitmap
+     */
+    public static Bitmap getBitmap(final View view, Bitmap.Config config) {
         if (view == null) return null;
-        Bitmap ret = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+        Bitmap ret = Bitmap.createBitmap(view.getWidth(), view.getHeight(), config);
         Canvas canvas = new Canvas(ret);
         Drawable bgDrawable = view.getBackground();
         if (bgDrawable != null) {
