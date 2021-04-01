@@ -3,9 +3,15 @@
 <h1 align="center">ToolKit</h1>
 <div align="center">
 
+![](https://img.shields.io/badge/android-4.0%2B-blue)
 [![](https://jitpack.io/v/ftmtshuashua/ToolKit.svg)](https://jitpack.io/#ftmtshuashua/ToolKit)
+[![License Apache2.0](http://img.shields.io/badge/license-Apache2.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0.html)
+
+
 
 </div>
+
+
 
 
 ## 简介
