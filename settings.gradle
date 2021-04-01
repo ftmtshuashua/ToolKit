@@ -1,2 +1,2 @@
-include ':Library'
-include ':app'
+include ':Lib'
+//include ':app'

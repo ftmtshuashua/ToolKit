@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "lfp.support.toolkit.demo"
+        applicationId "com.acap.toolkit"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
@@ -21,7 +21,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.2.0'
 
-    implementation project(':Library')
+    implementation project(':Lib')
     implementation 'org.jetbrains:annotations-java5:15.0'
 
 
