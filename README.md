@@ -1,9 +1,9 @@
 
 
-<h1 align="center">ToolKit-Android</h1>
+<h1 align="center">ToolKit</h1>
 <div align="center">
 
-[![](https://jitpack.io/v/ftmtshuashua/ToolKit-Android.svg)](https://jitpack.io/#ftmtshuashua/ToolKit-Android)
+[![](https://jitpack.io/v/ftmtshuashua/ToolKit.svg)](https://jitpack.io/#ftmtshuashua/ToolKit)
 
 </div>
 
