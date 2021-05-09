@@ -106,7 +106,7 @@ allprojects {
 在Model的build.gradle中添加
 ```
 dependencies {
-    implementation 'com.github.ftmtshuashua:ToolKit-Android:version'
+    implementation 'com.github.ftmtshuashua:ToolKit:version'
 }
 ```
 
