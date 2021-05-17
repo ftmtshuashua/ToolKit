@@ -19,6 +19,7 @@ import android.util.Log;
 import com.acap.toolkit.Utils;
 import com.acap.toolkit.codec.SHAUtils;
 import com.acap.toolkit.log.LogUtils;
+import com.acap.toolkit.phone.DeviceUtils;
 import com.acap.toolkit.phone.ProcessUtils;
 import com.acap.toolkit.phone.ShellUtils;
 
@@ -868,6 +869,9 @@ public class AppUtils {
         if (application != null) {
             app = application;
         }
+
+        LogUtils.setLogStackEnable(true);
+        LogUtils.i("当前设备", DeviceUtils.getPhoneInfo());
     }
 
 

@@ -12,8 +12,8 @@ import androidx.annotation.RequiresPermission;
 
 import com.acap.toolkit.app.AppUtils;
 import com.acap.toolkit.codec.MD5Utils;
+import com.acap.toolkit.log.LogUtils;
 import com.acap.toolkit.structure.KeyValue;
-import com.acap.toolkit.transform.ArraysUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -316,8 +316,13 @@ public class DeviceUtils {
     public static String getPhoneInfo() {
 
         List<KeyValue<String, String>> array = new ArrayList<>();
-        array.add(new KeyValue<>("厂商信息", MessageFormat.format("{0} - {1} : {2}", Build.BOARD, Build.MANUFACTURER, Build.MODEL)));
+        if (isTablet()) {
+            array.add(new KeyValue<>("厂商信息", MessageFormat.format("{0} - {1} : {2} (平板)", Build.MANUFACTURER, Build.DEVICE, Build.MODEL)));
+        } else {
+            array.add(new KeyValue<>("厂商信息", MessageFormat.format("{0} - {1} : {2}", Build.MANUFACTURER, Build.DEVICE, Build.MODEL)));
+        }
         array.add(new KeyValue<>("OS", MessageFormat.format("API{0} , {1}", SdkUtils.getCode(), SdkUtils.getName())));
+        array.add(new KeyValue<>("ROM", getRom().name()));
 
         ActivityManager am = (ActivityManager) AppUtils.getApp().getSystemService(Context.ACTIVITY_SERVICE);
         array.add(new KeyValue<>("内存信息", MessageFormat.format("{0,number,0.##}MB , Large:{1,number,0.##}MB", am.getMemoryClass(), am.getLargeMemoryClass())));
@@ -325,11 +330,19 @@ public class DeviceUtils {
         int sw = ScreenUtils.getScreenWidth();
         int sh = ScreenUtils.getScreenHeight();
         int cd = getCommonDivisor(sw, sh);
-        array.add(new KeyValue<>("屏幕信息", MessageFormat.format("{0,number,0}x{1,number,0}({2})", sw, sh,
-                MessageFormat.format("{0,number,0.##}:{1,number,0.##}", sw / cd, sh / cd)
-        )));
+        String str1 = MessageFormat.format("{0,number,0.##}:{1,number,0.##}", sw / cd, sh / cd);
+        String screenInfo = MessageFormat.format("{0,number,0}x{1,number,0}({2})", sw, sh, str1);
+        array.add(new KeyValue<>("屏幕信息", screenInfo));
 
-        return ArraysUtils.join(array, "\n");
+        array.add(new KeyValue<>("CPU信息", MessageFormat.format("{0},核心:{1}", CpuUtils.getCpuName(), CpuUtils.getNumCores())));
+
+
+        StringBuffer SB = new StringBuffer(" ");
+        List<String> lumpFormat = LogUtils.getLogLumpFormat(array);
+        for (String s : lumpFormat) {
+            SB.append("\n").append(s);
+        }
+        return SB.toString();
     }
 
 
@@ -340,6 +353,10 @@ public class DeviceUtils {
      * 系统ROM
      */
     public enum ROM {
+        /**
+         * 未知设备
+         */
+        UNKNOWN,
         /**
          * 小米
          */
@@ -374,29 +391,32 @@ public class DeviceUtils {
      */
     public static ROM getRom() {
         if (Build.MANUFACTURER.equalsIgnoreCase("xiaomi")) {
-            return ROM.MIUI; /*小米*/
+            return ROM.MIUI;
         } else if (Build.MANUFACTURER.equalsIgnoreCase("sony")) {
-            return ROM.SONY;  /*索尼*/
+            return ROM.SONY;
         } else if (Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
-            return ROM.SAMSUNG;  /*三星*/
+            return ROM.SAMSUNG;
         } else if (Build.MANUFACTURER.equalsIgnoreCase("lg")) {
-            return ROM.LG;  /*LG*/
+            return ROM.LG;
         } else if (Build.MANUFACTURER.equalsIgnoreCase("htc")) {
-            return ROM.HTC;  /*HTC*/
+            return ROM.HTC;
         } else if (Build.MANUFACTURER.equalsIgnoreCase("nova")) {
-            return ROM.NOVA; /*NOVA*/
+            return ROM.NOVA;
         } else if (Build.MANUFACTURER.equalsIgnoreCase("OPPO")) {
-            return ROM.OPPO; /*Oppo*/
+            return ROM.OPPO;
         } else if (Build.MANUFACTURER.equalsIgnoreCase("LeMobile")) {
-            return ROM.LEMOBILE; /*乐视*/
+            return ROM.LEMOBILE;
         } else if (Build.MANUFACTURER.equalsIgnoreCase("vivo")) {
-            return ROM.VIVO; /*Vivo*/
+            return ROM.VIVO;
         } else if (Build.MANUFACTURER.equalsIgnoreCase("HUAWEI") || Build.BRAND.equals("Huawe")) {
-            return ROM.HUAWEI; /*华为*/
+            return ROM.HUAWEI;
         } else if (Build.BRAND.equalsIgnoreCase("meizu")) {
-            return ROM.Flyme; /*Vivo*/
+            return ROM.Flyme;
         }
-        return null;
+
+
+
+        return ROM.UNKNOWN;
     }
 
 
@@ -436,5 +456,21 @@ public class DeviceUtils {
         }
         return a;
     }
+
+
+    public static void init() {
+        String key = "ro.product.board";
+        String prop = getProp(key);
+        LogUtils.e(MessageFormat.format("{0} = {1}" , key,prop));
+    }
+
+    private static String getProp(String prop) {
+        ShellUtils.CommandResult result = ShellUtils.execCmd(MessageFormat.format("getprop {0}", prop), false);
+        if (result.result == 0 && result.successMsg != null) {
+            return result.successMsg;
+        }
+        return "";
+    }
+
 
 }

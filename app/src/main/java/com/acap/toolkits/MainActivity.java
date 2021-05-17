@@ -1,4 +1,4 @@
-package com.acap.toolkit;
+package com.acap.toolkits;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +9,8 @@ import com.acap.toolkit.log.LogUtils;
 import com.acap.toolkit.thread.ThreadHelper;
 
 import org.jetbrains.annotations.Nullable;
+
+import java.text.MessageFormat;
 
 
 /**
@@ -26,10 +28,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        LogUtils.i("MainActivity创建了");
+        DM.test();
 
         findViewById(R.id.view_Button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                LogUtils.i("点击了按钮..");
                 ThreadHelper.io(new Runnable() {
                     @Override
                     public void run() {

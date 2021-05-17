@@ -65,7 +65,7 @@ public class TimeMonitorUtils {
 
     //显示日志
     private static final void log(long startTime, String msg) {
-        LogUtils.fit("耗时检查", "{0} -> {1,number,0}ms", msg == null ? "" : msg, System.currentTimeMillis() - startTime);
+        LogUtils.i_ft("耗时检查", "{0} -> {1,number,0}ms", msg == null ? "" : msg, System.currentTimeMillis() - startTime);
     }
 
 

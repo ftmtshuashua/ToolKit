@@ -62,7 +62,12 @@ public final class GlobalCrashIntercept {
 
     //当异常抛出时
     private void onCastCrash(Thread t, Throwable e) {
-        LogUtils.e("CastCrash", MessageFormat.format("at {0} thread", (t == null ? "Null" : t.getName())), e);
+        if (t == null) {
+            LogUtils.e("全局异常", e);
+        } else {
+            LogUtils.e(MessageFormat.format("全局异常[{0}]", t.getName()), e);
+        }
+
         if (mOnDiscoverGlobalCrashListener != null) {
             mOnDiscoverGlobalCrashListener.handler(t, e);
         }

@@ -13,9 +13,12 @@ import androidx.collection.LongSparseArray;
 import androidx.collection.SimpleArrayMap;
 
 import com.acap.toolkit.action.Action1;
+import com.acap.toolkit.transform.ArraysUtils;
 
 import java.lang.reflect.Array;
+import java.text.MessageFormat;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -290,5 +293,24 @@ public class Utils {
         return Integer.toHexString(System.identityHashCode(object));
     }
 
+    /**
+     * 获得在代码中调用LogUtils的代码所在位置
+     */
+    public final static StackTraceElement[] getStackTrace() {
+        return Thread.currentThread().getStackTrace();
+    }
 
+
+    /**
+     * 重复字符串多次
+     *
+     * @param seed      被重复的字符串
+     * @param count     重复的次数
+     * @param delimiter 分隔符
+     * @return 例：重复 “X” 3次 = "XXX"
+     */
+    public static final String createRepeatedStr(String seed, int count, String delimiter) {
+        return ArraysUtils.join(Collections.nCopies(count, seed), delimiter);
+
+    }
 }
