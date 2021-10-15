@@ -13,6 +13,6 @@ import com.acap.toolkit.log.LogUtils;
 public class DM {
 
     public static void test(){
-        LogUtils.i("DM中输出的日志");
+        LogUtils.i_f("DM中输出的日志:{0}" ,"xxx");
     }
 }

@@ -89,6 +89,7 @@
     - StringUtils:字符串相关
 
 - [x] view:View相关
+    - FpsMonitor:Fps监听
 
 
 
