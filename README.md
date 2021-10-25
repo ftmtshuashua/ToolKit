@@ -1,29 +1,19 @@
-
-
-<h1 align="center">ToolKit</h1>
-<div align="center">
-
+ToolKit
+=====
 ![](https://img.shields.io/badge/android-4.0%2B-blue)
 [![](https://jitpack.io/v/ftmtshuashua/ToolKit.svg)](https://jitpack.io/#ftmtshuashua/ToolKit)
 [![License Apache2.0](http://img.shields.io/badge/license-Apache2.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 
-
-</div>
-
-
-
-
 ## 简介
+
 > Android开发基础工具集，收集了一些常用工具
 
-
 - 引入Android默认混淆配置
-    - proguard_log_class.txt      ：列出apk包内所有class的内部结构
-    - proguard_log_seeds.txt      ：列的出未混淆类和成员
-    - proguard_log_unused.txt     ：列出从apk中删除的代码
-    - proguard_log_mapping.txt    ：列出混淆前后的映射
-
+    - proguard_log_class.txt ：列出apk包内所有class的内部结构
+    - proguard_log_seeds.txt ：列的出未混淆类和成员
+    - proguard_log_unused.txt ：列出从apk中删除的代码
+    - proguard_log_mapping.txt ：列出混淆前后的映射
 
 ## 包与类说明
 
@@ -31,7 +21,7 @@
 
 - [x] adapter:各种适配器
     - ScreenAdapter:字节跳动的屏幕适配方案
-  
+
 - [x] analysis:辅助分析类助手相关
 
 - [x] app:应用程序相关工具
@@ -42,6 +32,8 @@
     - ServiceUtils:服务管理
 
 - [x] cache:数据缓存相关
+    - LruCache:Lru缓存算法
+    - ObjectCacheUtils:对象复用工具
 
 - [x] codec:编解码相关
     - Base64Utils:<kbd>Base64</kbd>编解码
@@ -92,11 +84,18 @@
     - StringUtils:字符串相关
 
 - [x] view:View相关
+    - CanvasUtils:画布工具
     - FpsMonitor:Fps监听
+    - RUtils:R文件相关工具
+    - ViewSavedStateUtils:View缓存辅助工具
+    - ViewUtils:View相关工具
+    - XPaint:画笔工具
 
-
-
-
+- [x] widget:自定义View
+    - DrawableCenterTextView:文本与Drawable同时剧中
+    - LazyViewPager:ViewPager懒加载
+    - MarqueeTextView:跑马灯TextView
+    - TestRulerView:View尺寸测量工具
 
 ## 配置依赖
 
@@ -107,7 +106,9 @@ allprojects {
     }
 }
 ```
+
 在Model的build.gradle中添加
+
 ```
 dependencies {
     implementation 'com.github.ftmtshuashua:ToolKit:version'
