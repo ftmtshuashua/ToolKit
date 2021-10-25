@@ -29,6 +29,9 @@
 
 - [x] action:适配<kbd>Lambda</kbd>语法的<kbd>CallBack</kbd>和<kbd>Call</kbd>的接口定义
 
+- [x] adapter:各种适配器
+    - ScreenAdapterFromByteDance:字节跳动的屏幕适配方案
+  
 - [x] analysis:辅助分析类助手相关
 
 - [x] app:应用程序相关工具

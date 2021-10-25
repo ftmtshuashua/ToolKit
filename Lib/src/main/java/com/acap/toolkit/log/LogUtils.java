@@ -57,6 +57,13 @@ public class LogUtils {
         isDebug = debug;
     }
 
+    /***
+     * 判断 日志是否处于 Debug 模式
+     */
+    public static final boolean isDebug() {
+        return isDebug;
+    }
+
     /**
      * 设置日志栈是否启用
      */
@@ -114,7 +121,6 @@ public class LogUtils {
         if (!isDebug) return;
         l(tag, MessageFormat.format(pattern, arguments));
     }
-
 
     public static void v(String msg) {
         println(VERBOSE, msg);
@@ -297,7 +303,6 @@ public class LogUtils {
         e(tag, MessageFormat.format(pattern, arguments));
     }
 
-
     public static void e(Throwable throwable) {
         e(null, null, throwable);
     }
@@ -315,7 +320,6 @@ public class LogUtils {
         } else println(ERROR, tag, msg);
     }
 
-
     /**
      * 获得异常的栈信息
      */
@@ -323,61 +327,7 @@ public class LogUtils {
         return Log.getStackTraceString(tr);
     }
 
-    /**
-     * 获得在代码中调用LogUtils的代码所在位置
-     */
-    private final static StackTraceElement getStackTrace() {
-        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
-
-        //被排除的栈对象
-        String[] excludes = new String[]{LogUtils.class.getName()};
-
-        for (int index = 2; index < stackTrace.length; ++index) {
-            String str = stackTrace[index].getClassName();
-
-            boolean isExclude = false;
-            for (String exclude : excludes) {
-                if (str.equals(exclude)) {
-                    isExclude = true;
-                    break;
-                }
-            }
-
-            if (isExclude) {
-                continue;
-            }
-            return stackTrace[index];
-        }
-        return null;
-    }
-
-    private static void println(int priority, String msg) {
-        if (!isDebug) return;
-        println(priority, null, msg);
-    }
-
-    private static void println(int priority, String tag, String msg) {
-        if (!isDebug) return;
-        String mTag = TAG;
-        if (!Utils.isEmpty(tag)) {
-            mTag = MessageFormat.format("{0}-{1}", TAG, tag);
-        }
-
-        if (isLogStackEnable) {
-            if (msg.contains("\n")) {
-                int i = msg.indexOf("\n");
-                String begin = msg.substring(0, i);
-                String end = msg.substring(i);
-                begin = getFormatStackInfo(mTag, begin);
-                Log.println(priority, mTag, begin + end);
-            } else {
-                Log.println(priority, mTag, getFormatStackInfo(mTag, msg));
-            }
-        } else {
-            Log.println(priority, mTag, msg);
-        }
-    }
-
+    //----------------------------------------------------------------------------
 
     /**
      * 格式化一组相关的日志,提高他们的可读性
@@ -416,6 +366,24 @@ public class LogUtils {
         return log_array;
     }
 
+    private static Map<String, String> CacheRepeatedStr = new HashMap<>();
+
+    private static String getFormatStackInfo(String tag, String msg) {
+        String stack = MessageFormat.format("-{0}", formatStackTrace(getStackTrace()));
+        int width = (tag + msg).length();
+        int size = width / 4;
+        int count = 10 - size;
+        if (count < 1) count = 1;
+
+        String key = "\t" + count;
+        String joinstr = CacheRepeatedStr.get(key);
+        if (joinstr == null) {
+            joinstr = Utils.createRepeatedStr("\t", count, "");
+            CacheRepeatedStr.put(key, joinstr);
+        }
+        return msg + joinstr + stack;
+    }
+
 
     /**
      * 格式化栈元素
@@ -439,29 +407,61 @@ public class LogUtils {
             return MessageFormat.format("{3}.{0}({1}:{2,number,0})", methodName, fileName, lineNumber, className);
         }
     }
+    /**
+     * 获得在代码中调用LogUtils的代码所在位置
+     */
+    private final static StackTraceElement getStackTrace() {
+        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 
-    private static Map<String, String> CacheRepeatedStr = new HashMap<>();
+        //被排除的栈对象
+        String[] excludes = new String[]{LogUtils.class.getName()};
 
-    //生产格式化的栈信息
-    private static String getFormatStackInfo1(String tag, String msg) {
-        return MessageFormat.format("{0}\t\t-{1}", msg, formatStackTrace(getStackTrace()));
+        for (int index = 2; index < stackTrace.length; ++index) {
+            String str = stackTrace[index].getClassName();
+
+            boolean isExclude = false;
+            for (String exclude : excludes) {
+                if (str.equals(exclude)) {
+                    isExclude = true;
+                    break;
+                }
+            }
+
+            if (isExclude) {
+                continue;
+            }
+            return stackTrace[index];
+        }
+        return null;
     }
 
-    private static String getFormatStackInfo(String tag, String msg) {
-//        String stack = MessageFormat.format("<<-- at {0}", Utils.formatStackTrace(getStackTrace()));
-        String stack = MessageFormat.format("-{0}", formatStackTrace(getStackTrace()));
-        int width = (tag + msg).length();
-        int size = width / 4;
-        int count = 10 - size;
-        if (count < 1) count = 1;
+    //----------------------------------------------------------------------------
 
-        String key = "\t" + count;
-        String joinstr = CacheRepeatedStr.get(key);
-        if (joinstr == null) {
-            joinstr = Utils.createRepeatedStr("\t", count, "");
-            CacheRepeatedStr.put(key, joinstr);
+    private static void println(int priority, String msg) {
+        if (!isDebug) return;
+        println(priority, null, msg);
+    }
+
+    private static void println(int priority, String tag, String msg) {
+        if (!isDebug) return;
+        String mTag = TAG;
+        if (!Utils.isEmpty(tag)) {
+            mTag = MessageFormat.format("{0}-{1}", TAG, tag);
         }
-        return msg + joinstr + stack;
+
+        if (isLogStackEnable) {
+            if (msg.contains("\n")) {
+                int i = msg.indexOf("\n");
+                String begin = msg.substring(0, i);
+                String end = msg.substring(i);
+                begin = getFormatStackInfo(mTag, begin);
+                Log.println(priority, mTag, begin + end);
+            } else {
+                Log.println(priority, mTag, getFormatStackInfo(mTag, msg));
+            }
+        } else {
+            Log.println(priority, mTag, msg);
+        }
     }
 
 }
