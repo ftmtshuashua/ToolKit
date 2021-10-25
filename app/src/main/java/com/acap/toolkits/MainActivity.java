@@ -3,14 +3,11 @@ package com.acap.toolkits;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.acap.toolkit.log.LogUtils;
 import com.acap.toolkit.thread.ThreadHelper;
-
-import org.jetbrains.annotations.Nullable;
-
-import java.text.MessageFormat;
 
 
 /**
