@@ -111,7 +111,7 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.ftmtshuashua:ToolKit:version'
+    implementation 'com.github.ftmtshuashua:ToolKit:3.0.0-bate'
 }
 ```
 
