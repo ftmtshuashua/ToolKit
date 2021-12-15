@@ -8,8 +8,6 @@ import androidx.annotation.NonNull;
 
 import com.acap.toolkit.phone.CpuUtils;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -52,7 +50,7 @@ public class ThreadHelper {
         return miHandler;
     }
 
-    private static final ExecutorService getComputation() {
+    private static ExecutorService getComputation() {
         if (pComputation == null) {
             synchronized (ThreadHelper.class) {
                 if (pComputation == null) {
@@ -63,7 +61,7 @@ public class ThreadHelper {
         return pComputation;
     }
 
-    private static final ExecutorService getIo() {
+    private static ExecutorService getIo() {
         if (pIO == null) {
             synchronized (ThreadHelper.class) {
                 if (pIO == null) {
@@ -74,13 +72,12 @@ public class ThreadHelper {
         return pIO;
     }
 
-
     /**
      * 在IO线程执行业务逻辑
      *
      * @param runnable The runnable
      */
-    public static final void io(Runnable runnable) {
+    public static void io(Runnable runnable) {
         getIo().submit(runnable);
     }
 
@@ -89,7 +86,7 @@ public class ThreadHelper {
      *
      * @param runnable The runnable
      */
-    public static final void computation(Runnable runnable) {
+    public static void computation(Runnable runnable) {
         getComputation().submit(runnable);
     }
 
@@ -98,7 +95,7 @@ public class ThreadHelper {
      *
      * @param runnable The runnable
      */
-    public static final void main(Runnable runnable) {
+    public static void main(Runnable runnable) {
         if (Looper.getMainLooper() == Looper.myLooper()) runnable.run();
         else getMainHandler().post(runnable);
     }
@@ -109,8 +106,13 @@ public class ThreadHelper {
      * @param runnable    The runnable
      * @param delayMillis 等待时间
      */
-    public static final void mainDelayed(Runnable runnable, long delayMillis) {
+    public static void mainDelayed(long delayMillis, Runnable runnable) {
         getMainHandler().postDelayed(runnable, delayMillis);
+    }
+
+    /**判断是否为主线程*/
+    public static boolean isMainThread() {
+        return Looper.getMainLooper() == Looper.myLooper();
     }
 
 }
