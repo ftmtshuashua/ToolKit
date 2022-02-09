@@ -24,8 +24,8 @@ public class CloseUtils {
      *
      * @param closeables closeables
      */
-    public static void closeIO(final Closeable... closeables) {
-        closeIO(true, closeables);
+    public static void close(final Closeable... closeables) {
+        close(true, closeables);
     }
 
     /**
@@ -34,7 +34,7 @@ public class CloseUtils {
      * @param showlog    is show log
      * @param closeables closeables
      */
-    public static void closeIO(boolean showlog, final Closeable... closeables) {
+    public static void close(boolean showlog, final Closeable... closeables) {
         if (closeables == null) return;
         for (Closeable closeable : closeables) {
             if (closeable != null) {

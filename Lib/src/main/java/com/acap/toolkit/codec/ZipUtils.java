@@ -2,15 +2,20 @@ package com.acap.toolkit.codec;
 
 import android.util.Log;
 
+import androidx.annotation.Nullable;
+
+import com.acap.toolkit.CloseUtils;
 import com.acap.toolkit.Utils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,6 +23,7 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
+import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 /**
@@ -430,6 +436,51 @@ public class ZipUtils {
 
     private static File getFileByPath(final String filePath) {
         return Utils.isSpace(filePath) ? null : new File(filePath);
+    }
+
+    /**
+     * 读取zip中文件的数据
+     *
+     * @param path 文件在 zip 中的相对地址
+     * @return 读取失败时返回null
+     */
+    @Nullable
+    public static String readChildFile(String zipPath, String path) {
+        try {
+            ZipFile zip = new ZipFile(zipPath);
+            ZipInputStream zin = new ZipInputStream(new BufferedInputStream(new FileInputStream(zipPath)));
+            ZipEntry ze;
+
+            try {
+                while ((ze = zin.getNextEntry()) != null) {
+                    if (!ze.getName().equals(path)) continue;
+//                    if (ze.getSize() <= 0) continue;
+
+                    StringBuilder sb = new StringBuilder();
+
+                    BufferedReader br = null;
+                    try {
+                        br = new BufferedReader(new InputStreamReader(zip.getInputStream(ze)));
+                        String line;
+                        while ((line = br.readLine()) != null) {
+                            sb.append(line);
+                        }
+                    } finally {
+                        CloseUtils.close(br);
+                    }
+
+                    return sb.toString();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                zin.closeEntry();
+                CloseUtils.close(zip);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
