@@ -352,13 +352,13 @@ public class LogUtils {
      *
      * @param logs
      */
-    public static List<String> getLogLumpFormat(Iterable logs) {
+    public static List<String> getLogLumpFormat(Iterable<?> logs) {
         if (logs == null) {
             return new ArrayList<>();
         }
         ArrayList<String> log_array = new ArrayList<>();
         log_array.add("╔═══════════════════════════════════════════════════");
-        Iterator iterator = logs.iterator();
+        Iterator<?> iterator = logs.iterator();
         while (iterator.hasNext()) {
             log_array.add("║ " + iterator.next());
         }
