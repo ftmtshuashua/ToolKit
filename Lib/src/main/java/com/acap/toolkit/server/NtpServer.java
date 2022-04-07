@@ -28,36 +28,36 @@ import java.util.Date;
  */
 public class NtpServer {
     /* 授时服务器 */
-    private static Ntp mNtp = new Ntp("ntp.aliyun.com", 123);
+    private Ntp mNtp = new Ntp("ntp.aliyun.com", 123);
 
     /* 同步时间操作的超时时间 */
-    private static int mTimeout = 3000;
+    private int mTimeout = 3000;
 
     /* 判断是否同步了时间 */
-    private static boolean mIsSyned = false;
-    private static long mSynTime = 0;   //同步成功的本地时间
-    private static long mServerTime = 0; //同步成功的服务器时间
+    private boolean mIsSyned = false;
+    private long mSynTime = 0;   //同步成功的本地时间
+    private long mServerTime = 0; //同步成功的服务器时间
 
 
-    private NtpServer() {
+    public NtpServer() {
     }
 
     /**
      * 设置同步时间操作的超时时间，默认3秒
      */
-    public static void setTimeOut(int timeout) {
+    public void setTimeOut(int timeout) {
         mTimeout = timeout;
     }
 
     /**
      * 设置授时NTP服务器
      */
-    public static void setNtp(Ntp ntp) {
+    public void setNtp(Ntp ntp) {
         mNtp = ntp;
     }
 
     /* 设置同步成功的时间 */
-    private static void setSynTime(long serverTime, long consumedTime) {
+    private void setSynTime(long serverTime, long consumedTime) {
         mSynTime = SystemClock.elapsedRealtime();
         mServerTime = serverTime;
         mIsSyned = true;
@@ -71,7 +71,7 @@ public class NtpServer {
      * @throws IOException
      * @throws UnknownHostException Ntp配置异常
      */
-    public static void synTime() throws Throwable {
+    public void synTime() throws Throwable {
         try {
             long time_start = SystemClock.elapsedRealtime();
             DatagramSocket mSocket = new DatagramSocket();
@@ -100,21 +100,21 @@ public class NtpServer {
     /**
      * 判断是否已经同步了时间
      */
-    public static boolean isSyned() {
+    public boolean isSyned() {
         return mIsSyned;
     }
 
     /**
      * 获得本地系统的当前时间
      */
-    public static long getSystemTime() {
+    public long getSystemTime() {
         return System.currentTimeMillis();
     }
 
     /**
      * 获得服务器时间,如果授时未成功，则返回本地系统的当前时间
      */
-    public static long getServerTime() {
+    public long getServerTime() {
         if (mIsSyned) {
             return mServerTime + (SystemClock.elapsedRealtime() - mSynTime);
         }
