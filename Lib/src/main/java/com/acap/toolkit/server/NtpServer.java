@@ -61,7 +61,7 @@ public class NtpServer {
         mSynTime = SystemClock.elapsedRealtime();
         mServerTime = serverTime;
         mIsSyned = true;
-        LogUtils.i_f("授时成功:耗时 {0,number,0}ms -> {1,number,0} - {2}", consumedTime, serverTime, TimeUtils.millis2String(serverTime));
+        LogUtils.i_ft("授时", "成功 - 耗时{0,number,0}ms <- {1,number,0}({2})", consumedTime, serverTime, TimeUtils.millis2String(serverTime));
     }
 
     /**
@@ -92,7 +92,7 @@ public class NtpServer {
             setSynTime(System.currentTimeMillis() + Math.round(pOffset * 1000), time_end);
 
         } catch (Exception e) {
-            LogUtils.e_f("授时失败:{0}", e);
+            LogUtils.e_ft("授时", "失败 - {0}", e);
             throw e;
         }
     }
