@@ -91,7 +91,6 @@
 # 保持Native
 -keepclasseswithmembernames class * {native <methods>;}
 
-
 # 保持枚举的valuse方法
 -keepclassmembers enum * {
   public static **[] values();
