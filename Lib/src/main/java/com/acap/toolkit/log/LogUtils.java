@@ -87,9 +87,13 @@ public class LogUtils {
         int split = 3072;
         //组装
         List<String> array = new ArrayList<>();
-        while (msg.length() > split) {
-            array.add(msg.substring(0, split));
-            msg = msg.substring(split);
+        if (msg.length() <= split) {
+            array.add(msg);
+        } else {
+            while (msg.length() > split) {
+                array.add(msg.substring(0, split));
+                msg = msg.substring(split);
+            }
         }
         //输出
         List<String> lumpFormat = getLogLumpFormat(array);
@@ -407,6 +411,7 @@ public class LogUtils {
             return MessageFormat.format("{3}.{0}({1}:{2,number,0})", methodName, fileName, lineNumber, className);
         }
     }
+
     /**
      * 获得在代码中调用LogUtils的代码所在位置
      */
