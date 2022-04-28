@@ -1,6 +1,6 @@
 package com.acap.toolkit.constant;
 
-import androidx.annotation.LongDef;
+import androidx.annotation.IntDef;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -19,25 +19,25 @@ public final class TimeConstants {
     /**
      * 毫秒
      */
-    public static final long MSEC = 1;
+    public static final int MSEC = 1;
     /**
      * 秒
      */
-    public static final long SEC = 1000;
+    public static final int SEC = 1000;
     /**
      * 分
      */
-    public static final long MIN = 60000;
+    public static final int MIN = 60000;
     /**
      * 时
      */
-    public static final long HOUR = 3600000;
+    public static final int HOUR = 3600000;
     /**
      * 天
      */
-    public static final long DAY = 86400000;
+    public static final int DAY = 86400000;
 
-    @LongDef({MSEC, SEC, MIN, HOUR, DAY})
+    @IntDef({MSEC, SEC, MIN, HOUR, DAY})
     @Retention(RetentionPolicy.SOURCE)
     public @interface Unit {
     }
