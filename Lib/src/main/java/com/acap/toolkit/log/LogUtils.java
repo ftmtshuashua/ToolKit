@@ -83,22 +83,23 @@ public class LogUtils {
      */
     public static void l(String tag, String msg) {
         if (!isDebug) return;
-        int lever = INFO;
-        int split = 3072;
+        //每一行日志显示的长度
+        int SPLIT = 3072;
         //组装
+        int SIZE = msg.length();
+        int START = 0;
+        int END = START + SPLIT;
         List<String> array = new ArrayList<>();
-        if (msg.length() <= split) {
-            array.add(msg);
-        } else {
-            while (msg.length() > split) {
-                array.add(msg.substring(0, split));
-                msg = msg.substring(split);
-            }
+        while (START < SIZE) {
+            if (END > SIZE) END = SIZE;
+            array.add(msg.substring(START, END));
+            START = END;
+            END = START + SPLIT;
         }
         //输出
-        List<String> lumpFormat = getLogLumpFormat(array);
+        List<String> lumpFormat = LogUtils.getLogLumpFormat(array);
         for (String s : lumpFormat) {
-            println(lever, tag, s);
+            println(INFO, tag, s);
         }
     }
 
